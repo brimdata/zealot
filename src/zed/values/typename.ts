@@ -4,4 +4,8 @@ import { Primitive } from "./primitive";
 // I don't think I ever use this...
 export class Typename extends Primitive {
   type = TypeTypename;
+
+  toJS() {
+    return this.toString();
+  }
 }

@@ -1,5 +1,5 @@
 import { isNull } from "../utils";
-import { RecordFieldType, RecordType, Value } from "../../zjson";
+import * as zjson from "../../zjson";
 import { TypeDefs, ZedContext } from "../context";
 import { typeId } from "../utils";
 import { Field } from "../values/field";
@@ -11,7 +11,6 @@ import {
   ZedTypeInterface,
 } from "./types";
 import { Null, trueType } from "../index";
-import { zjson } from "../../index";
 import { ZedValueInterface } from "../values/types";
 import { values } from "lodash";
 
@@ -58,7 +57,7 @@ export class TypeRecord implements ContainerTypeInterface {
     return s;
   }
 
-  create(values: Value, typedefs: TypeDefs, parent?: Field) {
+  create(values: zjson.Value, typedefs: TypeDefs, parent?: Field) {
     if (values === null || isNull(this.fields)) return new Record(this, null);
     const record = new Record(this, null /* temp */);
     // If a parent was passed in, then we are constructing a nested record

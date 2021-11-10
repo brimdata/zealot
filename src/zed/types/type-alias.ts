@@ -1,6 +1,5 @@
 import { Field, TypeRecord } from "../index";
-import { zjson } from "../../index";
-import { Value } from "../../zjson";
+import * as zjson from "../../zjson";
 import { TypeDefs, ZedContext } from "../context";
 import { ZedValueInterface } from "../values/types";
 import {
@@ -25,7 +24,7 @@ export class TypeAlias implements ContainerTypeInterface {
     return name + "=(" + type.toString() + ")";
   }
 
-  create(value: Value, typedefs: TypeDefs, parent?: Field) {
+  create(value: zjson.Value, typedefs: TypeDefs, parent?: Field) {
     let v: ZedValueInterface;
     if (this.type instanceof TypeRecord || this.type instanceof TypeAlias) {
       v = this.type.create(value, typedefs, parent);
@@ -50,7 +49,11 @@ export class TypeAlias implements ContainerTypeInterface {
     return true;
   }
 
-  walkTypeValues(ctx: ZedContext, value: Value, visit: (name: string) => void) {
+  walkTypeValues(
+    ctx: ZedContext,
+    value: zjson.Value,
+    visit: (name: string) => void
+  ) {
     ctx.walkTypeValues(this.type, value, visit);
   }
 

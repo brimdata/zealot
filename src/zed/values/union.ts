@@ -24,4 +24,9 @@ export class Union implements ZedValueInterface {
   isUnset() {
     return isNull(this.index) || isNull(this.value);
   }
+
+  toJS() {
+    if (this.isUnset()) return null;
+    return this.value?.toJS();
+  }
 }

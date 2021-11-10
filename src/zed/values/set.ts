@@ -5,7 +5,7 @@ import { ZedValue, ZedValueInterface } from "./types";
 export class Set implements ZedValueInterface {
   constructor(public type: TypeSet, public items: ZedValueInterface[] | null) {}
 
-  indexOf(value: ZedValue) {
+  indexOf(value: ZedValueInterface) {
     if (isNull(this.items)) return -1;
     return this.items.indexOf(value);
   }
@@ -28,5 +28,10 @@ export class Set implements ZedValueInterface {
 
   isUnset() {
     return isNull(this.items);
+  }
+
+  toJS() {
+    if (isNull(this.items)) return null;
+    return this.items.map((i) => i.toJS());
   }
 }

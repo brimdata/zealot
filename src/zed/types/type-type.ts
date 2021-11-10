@@ -1,4 +1,4 @@
-import { zjson } from "../../index";
+import * as zjson from "../../zjson";
 import { TypeDefs, ZedContext } from "../context";
 import { getPrimitiveType, isNull, isPrimitiveName } from "../utils";
 import { TypeValue } from "../values/type";

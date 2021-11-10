@@ -21,4 +21,9 @@ export class TypeValue implements ZedValueInterface {
     if (isNull(this.value)) return null;
     else return typeId(this.value);
   }
+
+  toJS() {
+    if (isNull(this.value)) return null;
+    return this.toString();
+  }
 }

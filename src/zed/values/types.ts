@@ -64,6 +64,7 @@ export type ZedInt =
   | Int64;
 
 export interface ZedValueInterface {
+  toJS(): any;
   toString(): string;
   serialize(): Value;
   isUnset(): boolean;

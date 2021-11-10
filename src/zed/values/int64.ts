@@ -14,4 +14,8 @@ export class Int64 extends Primitive {
     if (isNull(this.value)) return null;
     return BigInt(this.value);
   }
+
+  toJS() {
+    return this.toBigInt();
+  }
 }

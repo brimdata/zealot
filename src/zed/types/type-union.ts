@@ -1,5 +1,5 @@
 import { Context } from "../index";
-import { zjson } from "../../index";
+import * as zjson from "../../zjson";
 import { TypeDefs } from "../context";
 import { isNull, typeId } from "../utils";
 import { Union } from "../values/union";

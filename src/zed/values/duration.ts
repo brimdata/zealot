@@ -21,8 +21,17 @@ export class Duration extends Primitive {
     return millis / 1000;
   }
 
+  asMs() {
+    if (isNull(this._nanos)) return null;
+    return Number(this._nanos / BigInt(1e6));
+  }
+
   asNanos() {
     return this._nanos;
+  }
+
+  toJS() {
+    return this.asMs();
   }
 }
 

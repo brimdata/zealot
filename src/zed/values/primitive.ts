@@ -4,6 +4,7 @@ import { ZedValueInterface } from "./types";
 
 export abstract class Primitive implements ZedValueInterface {
   abstract type: ZedType;
+  abstract toJS(): any;
 
   constructor(public value: string | null = null) {}
 

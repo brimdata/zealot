@@ -3,4 +3,8 @@ import { Primitive } from "./primitive";
 
 export class Ip extends Primitive {
   type = TypeIp;
+
+  toJS() {
+    return this.toString();
+  }
 }

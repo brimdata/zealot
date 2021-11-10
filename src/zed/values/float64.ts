@@ -9,4 +9,8 @@ export class Float64 extends Primitive {
     if (isNull(this.value)) return null;
     return parseFloat(this.value);
   }
+
+  toJS() {
+    return this.toFloat();
+  }
 }

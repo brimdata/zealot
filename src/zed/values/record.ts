@@ -115,6 +115,14 @@ export class Record implements ZedValueInterface {
   isUnset() {
     return isNull(this.fields);
   }
+
+  toJS() {
+    if (isNull(this.fields)) return null;
+    return this.fields.reduce((obj, field) => {
+      obj[field.name] = field.value.toJS();
+      return obj;
+    }, {} as { [key: string]: any });
+  }
 }
 
 class UnknownColumnError extends Error {

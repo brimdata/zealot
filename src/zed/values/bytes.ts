@@ -3,4 +3,8 @@ import { Primitive } from "./primitive";
 
 export class Bytes extends Primitive {
   type = TypeBytes;
+
+  toJS() {
+    return this.toString();
+  }
 }

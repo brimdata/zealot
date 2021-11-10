@@ -46,6 +46,10 @@ export class Time extends Primitive {
     let secs = this._time.toEpochSecond(ZoneOffset.UTC);
     return BigInt(secs) * 1_000_000_000n + BigInt(this._time.nano());
   }
+
+  toJS() {
+    return this.toDate();
+  }
 }
 
 const parseEpochSec = (v: string) => {

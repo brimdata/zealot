@@ -4,4 +4,8 @@ import { Primitive } from "./primitive";
 export class Null extends Primitive {
   type = TypeNull;
   value = null;
+
+  toJS() {
+    return null;
+  }
 }

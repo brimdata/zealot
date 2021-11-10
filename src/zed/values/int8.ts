@@ -9,4 +9,8 @@ export class Int8 extends Primitive {
     if (isNull(this.value)) return null;
     return parseInt(this.value);
   }
+
+  toJS() {
+    return this.toInt();
+  }
 }

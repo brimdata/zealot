@@ -3,4 +3,8 @@ import { Primitive } from "./primitive";
 
 export class Net extends Primitive {
   type = TypeNet;
+
+  toJS() {
+    return this.toString();
+  }
 }

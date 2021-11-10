@@ -30,6 +30,13 @@ export class ZedMap implements ZedValueInterface {
   isUnset() {
     return isNull(this.value);
   }
+
+  toJS() {
+    if (isNull(this.value)) return null;
+    return new Map(
+      Array.from(this.value.entries()).map(([k, v]) => [k.toJS(), v.toJS()])
+    );
+  }
 }
 
 function isIPv6(v: ZedValueInterface): boolean {

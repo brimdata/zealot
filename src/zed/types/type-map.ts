@@ -1,5 +1,4 @@
-import { zjson } from "../../index";
-import { Value } from "../../zjson";
+import * as zjson from "../../zjson";
 import { TypeDefs, ZedContext } from "../context";
 import { isNull, typeId } from "../utils";
 import { ZedMap } from "../values/map";
@@ -22,7 +21,7 @@ export class TypeMap implements ContainerTypeInterface {
     return `|{` + typeId(keyType) + ":" + typeId(valType) + "}|";
   }
 
-  create(value: [Value, Value][] | null, typedefs: TypeDefs) {
+  create(value: [zjson.Value, zjson.Value][] | null, typedefs: TypeDefs) {
     return new ZedMap(
       this,
       isNull(value)
