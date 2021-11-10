@@ -1,6 +1,6 @@
 {
   "name": "@brimdata/zealot",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "The Javascript Client for Zed Lakes",
   "main": "dist/index.js",
   "license": "MIT",
