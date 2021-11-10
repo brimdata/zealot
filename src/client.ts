@@ -1,5 +1,7 @@
 import fetch from "cross-fetch";
-import { zjson } from ".";
+import nodeFetch from "node-fetch";
+import { AbortSignal } from "node-fetch/externals";
+import { decode } from ".";
 import { parseContentType } from "./fetcher/contentType";
 import { eachLine } from "./ndjson/lines";
 import { QueryResultStream } from "./query-result-stream";
@@ -9,11 +11,45 @@ type ResponseFormat = "zng" | "ndjson" | "csv" | "json" | "zjson";
 
 type QueryOpts = {
   format: ResponseFormat;
+  signal?: AbortSignal;
 };
 
 type CreatePoolOpts = {
   key: string | string[];
   order: "asc" | "desc";
+};
+
+type Pool = {
+  id: string;
+  name: string;
+  threshold: bigint;
+  ts: Date;
+  layout: {
+    order: "desc" | "asc";
+    keys: string[][];
+  };
+};
+
+type Branch = {
+  ts: Date;
+  name: string;
+  commit: string;
+};
+
+type CreatePoolResp = {
+  pool: Pool;
+  branch: Branch;
+};
+
+interface IdObj {
+  id: string;
+}
+
+type LoadOpts = {
+  pool: string | IdObj;
+  branch: string;
+  signal: AbortSignal;
+  message: object;
 };
 
 export class Client {
@@ -39,6 +75,7 @@ export class Client {
         Accept: getAcceptValue(options.format),
         "Content-Type": "application/json",
       },
+      signal: options.signal,
     });
 
     const stream = new QueryResultStream();
@@ -73,10 +110,37 @@ export class Client {
       }),
     });
     const content = await parseContentType(resp);
-    if (resp.ok) {
-      return zjson([content])[0].toJS();
+    if (resp.ok && content !== null) {
+      return decode(content, { as: "js" }) as CreatePoolResp;
     } else {
       return Promise.reject(createError(content));
+    }
+  }
+
+  async load(data: string, opts: Partial<LoadOpts> = {}) {
+    const { pool } = opts;
+    if (!pool) throw new Error("Missing required option 'pool'");
+    const poolId = typeof pool === "string" ? pool : pool.id;
+    const branch = opts.branch || "main";
+    const path = `/pool/${poolId}/branch/${encodeURIComponent(branch)}`;
+    const headers: HeadersInit = {
+      "Content-Type": "application/json",
+      Accept: getAcceptValue("zjson"),
+    };
+    if (opts.message) {
+      headers["Zed-Commit"] = JSON.stringify(opts.message);
+    }
+    const resp = await nodeFetch(this.baseURL + path, {
+      method: "POST",
+      headers,
+      body: data,
+      signal: opts.signal,
+    });
+    const content = await parseContentType(resp);
+    if (resp.ok && content !== null) {
+      return decode(content, { as: "js" });
+    } else {
+      Promise.reject(createError(content));
     }
   }
 }

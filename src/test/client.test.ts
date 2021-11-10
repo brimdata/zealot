@@ -1,4 +1,5 @@
 import { zed } from "..";
+import pools from "../api/pools";
 import { TypeAlias } from "../zed";
 import setupLake from "./setup-lake";
 
@@ -56,9 +57,16 @@ test("event emitters", async () => {
     expect(shape).toBeInstanceOf(zed.TypeAlias);
   });
 
-  return new Promise<void>((res) => {
-    r.on("end", () => {
-      res();
-    });
+  return r.consumed();
+});
+
+test("load data", async () => {
+  const { client } = setup;
+  const { pool } = await client.createPool("Load Data Test");
+  const data = JSON.stringify(`{id: 1, name: "james"}`);
+  const resp = await client.load(data, {
+    pool: pool,
+    branch: "main",
   });
+  console.log(resp);
 });

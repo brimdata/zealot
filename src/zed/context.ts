@@ -1,3 +1,4 @@
+import { Context } from ".";
 import * as zjson from "../zjson";
 import { TypeAlias } from "./types/type-alias";
 import { TypeArray } from "./types/type-array";
@@ -247,3 +248,5 @@ export class ZedContext {
     };
   }
 }
+
+export const DefaultContext = new Context();

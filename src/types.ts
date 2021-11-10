@@ -1,10 +1,9 @@
 import { createZealot } from "./zealot";
-import { createStream } from "./fetcher/stream";
 import { createFetcher } from "./fetcher/fetcher";
 import * as lake from "./lake";
 
 export type Zealot = ReturnType<typeof createZealot>;
-export type ZResponse = ReturnType<typeof createStream>;
+export type ZResponse = any;
 export type ZFetcher = ReturnType<typeof createFetcher>;
 export type ZIterator = AsyncIterable<ZealotPayload>;
 

@@ -2,7 +2,6 @@ import { url } from "../util/utils";
 import { parseContentType } from "./contentType";
 import { Enhancer, ZealotUploadPayload, ZResponse } from "../types";
 import { createIterator } from "./iterator";
-import { createStream } from "./stream";
 import { createError } from "../util/error";
 import { createPushableIterator } from "./pushable-iterator";
 import { parseLines } from "../ndjson/lines";

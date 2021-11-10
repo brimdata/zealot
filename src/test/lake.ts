@@ -1,7 +1,8 @@
 import { spawn, ChildProcess } from "child_process";
 import fs, { FileHandle } from "fs/promises";
-import { Client, Zealot } from "..";
+import { Client } from "..";
 import path from "path";
+import fkill from "fkill";
 
 export class ZedLake {
   p: ChildProcess | undefined;
@@ -12,15 +13,15 @@ export class ZedLake {
 
   constructor(port: number) {
     this.port = port;
-    this.log = `./logs/${port}.log`;
-    this.root = `./.roots/${port}`;
+    this.log = path.join(__dirname, `../../logs/${port}.log`);
+    this.root = path.join(__dirname, `../../.roots/${port}`);
   }
 
   async start() {
-    try {
-      await fs.rm(this.log, { recursive: true });
-      await fs.rm(this.root, { recursive: true });
-    } catch (e) {}
+    await fkill(":" + this.port, { silent: true });
+    await fs.rm(this.log, { recursive: true });
+    await fs.rm(this.root, { recursive: true });
+    await new Promise((r) => setTimeout(r, 3000));
     await fs.mkdir("./logs", { recursive: true });
     await fs.mkdir(this.root, { recursive: true });
 
@@ -55,7 +56,7 @@ export class ZedLake {
   }
 
   async stop() {
-    this.p?.kill(9);
     this.l?.close();
+    await fkill(":" + this.port, { silent: true });
   }
 }

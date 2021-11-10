@@ -1,4 +1,4 @@
-import { createZealot } from "..";
+import { createZealot } from "../zealot";
 import { Client } from "../client";
 import { ZedLake } from "./lake";
 
