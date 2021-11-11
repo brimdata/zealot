@@ -1,6 +1,6 @@
 {
   "name": "@brimdata/zealot",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "The Javascript Client for Zed Lakes",
   "keywords": [
     "zed",
@@ -31,7 +31,7 @@
   "scripts": {
     "prepack": "yarn build && yarn build:es",
     "build": "tsc --outDir dist/cjs --declaration",
-    "build:es": "rollup -o dist/es/index.js -p node-resolve -p commonjs -f es dist/cjs/index.js",
+    "build:es": "rollup -c rollup.config.js",
     "watch": "yarn run build -- --watch",
     "test": "jest"
   },
