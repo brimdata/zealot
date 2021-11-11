@@ -1,7 +1,7 @@
 import { Uint16 } from "../values/uint16";
 import { BasePrimitive } from "./base-primitive";
 
-class TypeOfUint16 extends BasePrimitive<Uint16> {
+export class TypeOfUint16 extends BasePrimitive<Uint16> {
   name = "uint16";
 
   create(value: string | null) {

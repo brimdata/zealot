@@ -1,7 +1,7 @@
 import { Int64 } from "../values/int64";
 import { BasePrimitive } from "./base-primitive";
 
-class TypeOfInt64 extends BasePrimitive<Int64> {
+export class TypeOfInt64 extends BasePrimitive<Int64> {
   name = "int64";
 
   create(value: string | null) {

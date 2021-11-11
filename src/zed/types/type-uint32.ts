@@ -1,7 +1,7 @@
 import { Uint32 } from "../values/uint32";
 import { BasePrimitive } from "./base-primitive";
 
-class TypeOfUint32 extends BasePrimitive<Uint32> {
+export class TypeOfUint32 extends BasePrimitive<Uint32> {
   name = "uint32";
 
   create(value: string | null) {

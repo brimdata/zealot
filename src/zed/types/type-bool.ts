@@ -1,7 +1,7 @@
 import { Bool } from "../values/bool";
 import { BasePrimitive } from "./base-primitive";
 
-class TypeOfBool extends BasePrimitive<Bool> {
+export class TypeOfBool extends BasePrimitive<Bool> {
   name = "bool";
 
   create(value: string) {

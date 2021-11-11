@@ -2,7 +2,7 @@ import { zjson } from "../../index";
 import { Uint8 } from "../values/uint8";
 import { BasePrimitive } from "./base-primitive";
 
-class TypeOfUint8 extends BasePrimitive<Uint8> {
+export class TypeOfUint8 extends BasePrimitive<Uint8> {
   name = "uint8";
 
   create(value: string | null) {

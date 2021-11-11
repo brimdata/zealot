@@ -10,7 +10,10 @@ import {
   Uint8,
 } from "./index";
 import { BasePrimitive } from "./types/base-primitive";
-import primitives, { PrimitiveName } from "./types/type-primitives";
+import primitives, {
+  PrimitiveName,
+  PrimitiveTypes,
+} from "./types/type-primitives";
 import { ZedTypeInterface } from "./types/types";
 import { BString } from "./values/bstring";
 import { Duration } from "./values/duration";
@@ -93,7 +96,7 @@ export function isFloat64(value: unknown): value is Float64 {
 }
 
 export function getPrimitiveType(name: PrimitiveName) {
-  return primitives[name];
+  return primitives[name] as PrimitiveTypes;
 }
 
 export function isPrimitive(value: unknown): value is Primitive {

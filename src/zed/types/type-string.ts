@@ -1,6 +1,6 @@
 import { String } from "../values/string";
 import { BasePrimitive } from "./base-primitive";
-class TypeOfString extends BasePrimitive<String> {
+export class TypeOfString extends BasePrimitive<String> {
   name = "string";
 
   create(value: string) {

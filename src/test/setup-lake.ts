@@ -8,7 +8,7 @@ class TestLake {
   // @ts-ignore
   client: Client;
   // @ts-ignore
-  oldClient: Zealot;
+  oldClient: any;
 
   assign(
     lake: TestLake["lake"],

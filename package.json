@@ -2,6 +2,13 @@
   "name": "@brimdata/zealot",
   "version": "0.0.7",
   "description": "The Javascript Client for Zed Lakes",
+  "keywords": [
+    "zed",
+    "brim",
+    "zjson",
+    "zealot",
+    "zedjs"
+  ],
   "main": "dist/cjs/index.js",
   "module": "./dist/es/index.js",
   "exports": {
@@ -22,7 +29,7 @@
   ],
   "scripts": {
     "prepack": "yarn build && yarn build:es",
-    "build": "tsc --outDir dist/cjs",
+    "build": "tsc --outDir dist/cjs --declaration",
     "build:es": "rollup -o dist/es/index.js -p commonjs -e cross-fetch,lodash,@js-joda/core,events -f es dist/cjs/index.js",
     "watch": "yarn run build -- --watch",
     "test": "jest"

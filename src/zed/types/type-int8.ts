@@ -1,7 +1,7 @@
 import { Int8 } from "../values/int8";
 import { BasePrimitive } from "./base-primitive";
 
-class TypeOfInt8 extends BasePrimitive<Int8> {
+export class TypeOfInt8 extends BasePrimitive<Int8> {
   name = "int8";
 
   create(value: string | null) {

@@ -1,7 +1,7 @@
 import { BString } from "../values/bstring";
 import { BasePrimitive } from "./base-primitive";
 
-class TypeOfBString extends BasePrimitive<BString> {
+export class TypeOfBString extends BasePrimitive<BString> {
   name = "bstring";
 
   create(value: string) {

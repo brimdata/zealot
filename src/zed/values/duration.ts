@@ -3,7 +3,7 @@ import { isNull } from "../utils";
 import { Primitive } from "./primitive";
 
 export class Duration extends Primitive {
-  type = TypeDuration;
+  type: typeof TypeDuration = TypeDuration;
   _nanos: bigint | null;
 
   constructor(value: string | null) {

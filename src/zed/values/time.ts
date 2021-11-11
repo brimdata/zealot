@@ -13,7 +13,7 @@ import { isNull } from "../utils";
 import { Primitive } from "./primitive";
 
 export class Time extends Primitive {
-  type = TypeTime;
+  type: typeof TypeTime = TypeTime;
   _time: ZonedDateTime | null;
 
   static parse(value: string) {

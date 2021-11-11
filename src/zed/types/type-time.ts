@@ -1,7 +1,7 @@
 import { Time } from "../values/time";
 import { BasePrimitive } from "./base-primitive";
 
-class TypeOfTime extends BasePrimitive<Time> {
+export class TypeOfTime extends BasePrimitive<Time> {
   name = "time";
 
   create(value: string) {

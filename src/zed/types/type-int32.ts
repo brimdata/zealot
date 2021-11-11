@@ -1,7 +1,7 @@
 import { Int32 } from "../values/int32";
 import { BasePrimitive } from "./base-primitive";
 
-class TypeOfInt32 extends BasePrimitive<Int32> {
+export class TypeOfInt32 extends BasePrimitive<Int32> {
   name = "int32";
 
   create(value: string | null) {

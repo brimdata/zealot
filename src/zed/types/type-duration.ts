@@ -1,7 +1,7 @@
 import { Duration } from "../values/duration";
 import { BasePrimitive } from "./base-primitive";
 
-class TypeOfDuration extends BasePrimitive<Duration> {
+export class TypeOfDuration extends BasePrimitive<Duration> {
   name = "duration";
 
   create(value: string) {

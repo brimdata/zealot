@@ -3,7 +3,7 @@ import { TypeInt8 } from "../types/type-int8";
 import { Primitive } from "./primitive";
 
 export class Int8 extends Primitive {
-  type = TypeInt8;
+  type: typeof TypeInt8 = TypeInt8;
 
   toInt() {
     if (isNull(this.value)) return null;

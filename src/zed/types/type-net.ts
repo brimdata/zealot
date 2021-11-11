@@ -1,7 +1,7 @@
 import { Net } from "../values/net";
 import { BasePrimitive } from "./base-primitive";
 
-class TypeOfNet extends BasePrimitive<Net> {
+export class TypeOfNet extends BasePrimitive<Net> {
   name = "net";
 
   create(value: string) {

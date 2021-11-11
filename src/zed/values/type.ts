@@ -4,7 +4,7 @@ import { isNull, typeId } from "../utils";
 import { ZedValueInterface } from "./types";
 
 export class TypeValue implements ZedValueInterface {
-  type = TypeType;
+  type: typeof TypeType = TypeType;
 
   constructor(public value: ZedTypeInterface | null = null) {}
 

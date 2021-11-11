@@ -1,7 +1,7 @@
 import { Error } from "../values/error";
 import { BasePrimitive } from "./base-primitive";
 
-class TypeOfError extends BasePrimitive<Error> {
+export class TypeOfError extends BasePrimitive<Error> {
   name = "error";
 
   create(value: string) {

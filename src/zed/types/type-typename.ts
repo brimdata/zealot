@@ -1,7 +1,7 @@
 import { Typename } from "../values/typename";
 import { BasePrimitive } from "./base-primitive";
 
-class TypeOfTypename extends BasePrimitive<Typename> {
+export class TypeOfTypename extends BasePrimitive<Typename> {
   name = "typename";
 
   create(value: string) {

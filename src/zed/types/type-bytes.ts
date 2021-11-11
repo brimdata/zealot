@@ -1,7 +1,7 @@
 import { Bytes } from "../values/bytes";
 import { BasePrimitive } from "./base-primitive";
 
-class TypeOfBytes extends BasePrimitive<Bytes> {
+export class TypeOfBytes extends BasePrimitive<Bytes> {
   name = "bytes";
 
   create(value: string) {
