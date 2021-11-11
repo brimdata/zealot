@@ -1,8 +1,13 @@
 {
   "name": "@brimdata/zealot",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "The Javascript Client for Zed Lakes",
   "main": "dist/cjs/index.js",
+  "module": "./dist/es/index.js",
+  "exports": {
+    "require": "./dist/cjs/index.js",
+    "import": "./dist/es/index.js"
+  },
   "license": "MIT",
   "engines": {
     "node": "^12.20.0 || ^14.13.1 || >=16.0.0"
@@ -18,7 +23,7 @@
   "scripts": {
     "prepack": "yarn build && yarn build:es",
     "build": "tsc --outDir dist/cjs",
-    "build:es": "rollup -o dist/es/zealot.js -p commonjs -e cross-fetch,lodash,@js-joda/core,events -f es dist/cjs/index.js",
+    "build:es": "rollup -o dist/es/index.js -p commonjs -e cross-fetch,lodash,@js-joda/core,events -f es dist/cjs/index.js",
     "watch": "yarn run build -- --watch",
     "test": "jest"
   },
