@@ -1,5 +1,0 @@
-{"level":"info","ts":1636520867.0855029,"msg":"Open files limit raised","limit":24576}
-{"level":"info","ts":1636520867.087342,"logger":"core","msg":"Started"}
-{"level":"error","ts":1636520867.08948,"logger":"httpd","msg":"Listen error","error":"listen tcp 127.0.0.1:9888: bind: address already in use","stacktrace":"github.com/brimdata/zed/pkg/httpd.(*Server).Start\n\t/Users/jkerr/work/zed/pkg/httpd/server.go:42\ngithub.com/brimdata/zed/cmd/zed/lake/serve.(*Command).Run\n\t/Users/jkerr/work/zed/cmd/zed/lake/serve/command.go:111\ngithub.com/brimdata/zed/pkg/charm.path.run\n\t/Users/jkerr/work/zed/pkg/charm/path.go:11\ngithub.com/brimdata/zed/pkg/charm.(*Spec).ExecRoot\n\t/Users/jkerr/work/zed/pkg/charm/charm.go:63\nmain.main\n\t/Users/jkerr/work/zed/cmd/zed/main.go:49\nruntime.main\n\t/usr/local/Cellar/go/1.16.2/libexec/src/runtime/proc.go:225"}
-{"level":"info","ts":1636520867.0895739,"logger":"core","msg":"Shutdown"}
-listen tcp 127.0.0.1:9888: bind: address already in use
