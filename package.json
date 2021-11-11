@@ -1,6 +1,6 @@
 {
   "name": "@brimdata/zealot",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "The Javascript Client for Zed Lakes",
   "main": "dist/cjs/index.js",
   "license": "MIT",
@@ -11,12 +11,15 @@
     "type": "git",
     "url": "https://github.com/brimdata/zealot"
   },
+  "files": [
+    "dist",
+    "src"
+  ],
   "scripts": {
-    "prepublishOnly": "yarn build",
-    "build": "yarn build:cjs && yarn build:amd",
-    "build:cjs": "tsc --outDir dist/cjs",
-    "build:amd": "tsc --outDir dist/amd --module amd",
-    "watch": "yarn run build:cjs -- --watch",
+    "prepack": "yarn build && yarn build:es",
+    "build": "tsc --outDir dist/cjs",
+    "build:es": "rollup -o dist/es/zealot.js -p commonjs -e cross-fetch,lodash,@js-joda/core,events -f es dist/cjs/index.js",
+    "watch": "yarn run build -- --watch",
     "test": "jest"
   },
   "devDependencies": {
