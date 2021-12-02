@@ -1,6 +1,6 @@
 {
   "name": "@brimdata/zealot",
-  "version": "0.0.11",
+  "version": "0.0.14",
   "description": "The Javascript Client for Zed Lakes",
   "keywords": [
     "zed",
@@ -51,7 +51,7 @@
     "rollup": "^2.59.0",
     "ts-jest": "^27.0.7",
     "typescript": "^4.4.4",
-    "zed": "file:../zed"
+    "zed": "git+https://github.com/brimdata/zed.git#cd206afb6c2b91a8bffd699f11d426aa51c45986"
   },
   "dependencies": {
     "@js-joda/core": "^4.3.1",
