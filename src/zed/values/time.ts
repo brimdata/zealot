@@ -41,10 +41,10 @@ export class Time extends Primitive {
   }
 
   toBigInt(): bigint {
-    if (isNull(this._time)) return 0n;
+    if (isNull(this._time)) return BigInt(0);
     // @ts-ignore
     let secs = this._time.toEpochSecond(ZoneOffset.UTC);
-    return BigInt(secs) * 1_000_000_000n + BigInt(this._time.nano());
+    return BigInt(secs) * BigInt(1_000_000_000) + BigInt(this._time.nano());
   }
 
   toJS() {

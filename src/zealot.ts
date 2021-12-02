@@ -82,8 +82,8 @@ export function createZealot(
         const spanRec = rec.get<Record>("span");
         if (!spanRec.null) {
           stats.span = {
-            ts: spanRec.get<Time>("ts").toBigInt() || 0n,
-            dur: spanRec.get<Int64>("dur").toBigInt() || 0n,
+            ts: spanRec.get<Time>("ts").toBigInt() || BigInt(0),
+            dur: spanRec.get<Int64>("dur").toBigInt() || BigInt(0),
           };
         }
         return stats;

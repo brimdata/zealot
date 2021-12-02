@@ -59,4 +59,4 @@ function encode(
   }
 }
 
-export { Client, encode, decode, zjson, zed };
+export { Client, encode, decode, zjson, zed, DefaultContext };

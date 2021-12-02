@@ -7,7 +7,7 @@ export class Uint64 extends Primitive {
 
   toInt() {
     if (isNull(this.value)) return null;
-    return BigInt(this.value);
+    return parseInt(this.value);
   }
 
   toBigInt() {

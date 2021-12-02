@@ -37,15 +37,15 @@ export class Duration extends Primitive {
 
 const parseRE = /([.0-9]+)(ns|us|ms|s|m|h|d|w|y)/g;
 
-export const Nanosecond = 1n;
-export const Microsecond = 1000n * Nanosecond;
-export const Millisecond = 1000n * Microsecond;
-export const Second = 1000n * Millisecond;
-export const Minute = 60n * Second;
-export const Hour = 60n * Minute;
-export const Day = 24n * Hour;
-export const Week = 7n * Day;
-export const Year = 365n * Day;
+export const Nanosecond = BigInt(1);
+export const Microsecond = BigInt(1000) * Nanosecond;
+export const Millisecond = BigInt(1000) * Microsecond;
+export const Second = BigInt(1000) * Millisecond;
+export const Minute = BigInt(60) * Second;
+export const Hour = BigInt(60) * Minute;
+export const Day = BigInt(24) * Hour;
+export const Week = BigInt(7) * Day;
+export const Year = BigInt(365) * Day;
 const scale = {
   ns: Nanosecond,
   us: Microsecond,
@@ -60,7 +60,7 @@ const scale = {
 type UnitName = keyof typeof scale;
 
 function parseNanos(s: string) {
-  if (s.length === 0) return 0n;
+  if (s.length === 0) return BigInt(0);
 
   let negative = false;
   if (s[0] === "-") {
@@ -68,7 +68,7 @@ function parseNanos(s: string) {
     s = s.slice(1);
   }
   let matches = s.matchAll(parseRE);
-  let d = 0n;
+  let d = BigInt(0);
   for (const match of matches) {
     if (match.length !== 3) throw new Error("Invalid Duration");
     const [_all, num, unitName] = match;
@@ -79,18 +79,18 @@ function parseNanos(s: string) {
       let whole = parts[0];
       d += BigInt(whole) * unit;
       let frac = parts[1];
-      let extra = 0n;
+      let extra = BigInt(0);
       for (let char of frac) {
         extra += BigInt(char) * unit;
-        unit /= 10n;
+        unit /= BigInt(10);
       }
-      d += (extra + 5n) / 10n;
+      d += (extra + BigInt(5)) / BigInt(10);
     } else {
       d += BigInt(num) * unit;
     }
   }
   if (negative) {
-    d *= -1n;
+    d *= BigInt(-1);
   }
   return d;
 }
