@@ -1,13 +1,13 @@
-import { PrimitiveType, Value } from "../../zjson";
-import { ZedValueInterface } from "../values/types";
-import { ZedTypeInterface } from "./types";
+import * as zjson from "../../zjson";
+import { Value } from "../values/types";
+import { Type } from "./types";
 
-export abstract class BasePrimitive<T> implements ZedTypeInterface {
+export abstract class BasePrimitive<T> implements Type {
   kind = "primitive";
   abstract name: string;
-  abstract create(value: Value, typedefs?: object): ZedValueInterface;
+  abstract create(value: zjson.Value, typedefs?: object): Value;
 
-  serialize(): PrimitiveType {
+  serialize(): zjson.PrimitiveType {
     return { kind: "primitive", name: this.name };
   }
 

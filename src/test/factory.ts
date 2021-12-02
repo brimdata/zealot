@@ -27,9 +27,9 @@ export function createField(name: string, value: unknown): zed.Field {
   return new zed.Field(name, createData(value), null);
 }
 
-export function createData(value: unknown): zed.AnyValue {
+export function createData(value: unknown): zed.Value {
   if (value instanceof zed.Primitive) {
-    return value as zed.AnyValue;
+    return value as zed.Value;
   }
 
   if (value === null) {

@@ -1,13 +1,13 @@
 import EventEmitter from "events";
 import { decode } from ".";
 import { Record } from "./zed";
-import { ZedTypeInterface } from "./zed/types/types";
+import { Type } from "./zed/types/types";
 import { RootRecord } from "./zjson";
 
 class Channel extends EventEmitter {
   rows: Record[] = [];
-  types: { [name: string]: ZedTypeInterface } = {};
-  shapes: { [name: string]: ZedTypeInterface } = {};
+  types: { [name: string]: Type } = {};
+  shapes: { [name: string]: Type } = {};
   done: boolean = false;
 
   consumed() {

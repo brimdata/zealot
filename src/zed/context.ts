@@ -7,16 +7,12 @@ import primitives, { PrimitiveName } from "./types/type-primitives";
 import { TypeField, TypeRecord } from "./types/type-record";
 import { TypeSet } from "./types/type-set";
 import { TypeUnion } from "./types/type-union";
-import {
-  ContainerTypeInterface,
-  SerializeTypeDefs,
-  ZedTypeInterface,
-} from "./types/types";
+import { ContainerType, SerializeTypeDefs, Type } from "./types/types";
 import { isAlias, isNull, typeId } from "./utils";
 import { Field } from "./values/field";
 import { Record } from "./values/record";
 
-export type TypeDefs = { [key: string]: ZedTypeInterface };
+export type TypeDefs = { [key: string]: Type };
 
 export class ZedContext {
   private id = 23;
@@ -37,7 +33,7 @@ export class ZedContext {
     return type.create(values, typedefs);
   }
 
-  decodeType(obj: zjson.Type, typedefs: TypeDefs = {}): ZedTypeInterface {
+  decodeType(obj: zjson.Type, typedefs: TypeDefs = {}): Type {
     // All types with the same shape in a zed context must point to the same type instance. When
     // decoding a stream of zjson, use the following logic to get the correct type instance.
     //
@@ -115,7 +111,7 @@ export class ZedContext {
     }
   }
 
-  lookupTypeArray(type: ZedTypeInterface): TypeArray {
+  lookupTypeArray(type: Type): TypeArray {
     const key = TypeArray.stringify(type);
     if (key in this.typeByShape) {
       return this.typeByShape[key] as TypeArray;
@@ -124,7 +120,7 @@ export class ZedContext {
     }
   }
 
-  lookupTypeSet(type: ZedTypeInterface): TypeSet {
+  lookupTypeSet(type: Type): TypeSet {
     const key = TypeSet.stringify(type);
     if (key in this.typeByShape) {
       return this.typeByShape[key] as TypeSet;
@@ -133,7 +129,7 @@ export class ZedContext {
     }
   }
 
-  lookupTypeUnion(types: ZedTypeInterface[]) {
+  lookupTypeUnion(types: Type[]) {
     const key = TypeUnion.stringify(types);
     if (key in this.typeByShape) {
       return this.typeByShape[key];
@@ -142,7 +138,7 @@ export class ZedContext {
     }
   }
 
-  lookupTypeMap(keyType: ZedTypeInterface, valType: ZedTypeInterface) {
+  lookupTypeMap(keyType: Type, valType: Type) {
     const key = TypeMap.stringify(keyType, valType);
     if (key in this.typeByShape) {
       return this.typeByShape[key];
@@ -151,7 +147,7 @@ export class ZedContext {
     }
   }
 
-  lookupTypeAlias(name: string, type: ZedTypeInterface) {
+  lookupTypeAlias(name: string, type: Type) {
     const key = TypeAlias.stringify(name, type);
     if (key in this.typeByShape) {
       return this.typeByShape[key];
@@ -163,7 +159,7 @@ export class ZedContext {
     }
   }
 
-  alloc<T extends ContainerTypeInterface>(key: string, type: T): T {
+  alloc<T extends ContainerType>(key: string, type: T): T {
     type.id = this.id++;
     this.typeByShape[key] = type;
     this.typeById[type.id.toString()] = type;
@@ -212,7 +208,7 @@ export class ZedContext {
   }
 
   walkTypeValues(
-    type: ZedTypeInterface,
+    type: Type,
     value: zjson.Value,
     visit: (name: string) => void
   ) {
@@ -221,13 +217,12 @@ export class ZedContext {
     }
   }
 
-  hasTypeType(type: ZedTypeInterface): type is ContainerTypeInterface {
+  hasTypeType(type: Type): type is ContainerType {
     const name = typeId(type);
     if (name in this.typetype) return this.typetype[name];
 
     const bool =
-      "hasTypeType" in type &&
-      (type as ContainerTypeInterface).hasTypeType(this);
+      "hasTypeType" in type && (type as ContainerType).hasTypeType(this);
     this.typetype[name] = bool;
     return bool;
   }

@@ -1,11 +1,11 @@
 import { isNull } from "../utils";
 import { TypeSet } from "../types/type-set";
-import { ZedValue, ZedValueInterface } from "./types";
+import { ZedValue, Value } from "./types";
 
-export class Set implements ZedValueInterface {
-  constructor(public type: TypeSet, public items: ZedValueInterface[] | null) {}
+export class Set implements Value {
+  constructor(public type: TypeSet, public items: Value[] | null) {}
 
-  indexOf(value: ZedValueInterface) {
+  indexOf(value: Value) {
     if (isNull(this.items)) return -1;
     return this.items.indexOf(value);
   }

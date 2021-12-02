@@ -1,7 +1,7 @@
 import { Field } from "../index";
 import * as zjson from "../../zjson";
 import { TypeDefs, ZedContext } from "../context";
-import { ZedValueInterface } from "../values/types";
+import { Value } from "../values/types";
 import { TypeAlias } from "./type-alias";
 import { TypeArray } from "./type-array";
 import { TypeMap } from "./type-map";
@@ -23,18 +23,14 @@ export type SerializeTypeDefs = {
   [key: string]: zjson.Type;
 };
 
-export interface ZedTypeInterface {
+export interface Type {
   id?: string | number;
   toString(): string;
   serialize(typedefs: SerializeTypeDefs): zjson.Type;
-  create(
-    value: zjson.Value,
-    typedefs: TypeDefs,
-    parent?: Field
-  ): ZedValueInterface;
+  create(value: zjson.Value, typedefs: TypeDefs, parent?: Field): Value;
 }
 
-export interface ContainerTypeInterface extends ZedTypeInterface {
+export interface ContainerType extends Type {
   hasTypeType(ctx: ZedContext): boolean;
   walkTypeValues(
     context: ZedContext,

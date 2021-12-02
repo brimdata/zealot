@@ -1,10 +1,10 @@
 import { Record } from "./record";
-import { ZedValue, ZedValueInterface } from "./types";
+import { ZedValue, Value } from "./types";
 
 export class Field {
   constructor(
     public name: string,
-    public value: ZedValueInterface,
+    public value: Value,
     public parent: Record | Field | null
   ) {}
 

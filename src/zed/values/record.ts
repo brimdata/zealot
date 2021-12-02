@@ -5,11 +5,11 @@ import { TypeRecord } from "../types/type-record";
 import { ZedType } from "../types/types";
 import { flatColumns, trueType } from "../utils";
 import { Field } from "./field";
-import { ZedValue, ZedValueInterface } from "./types";
+import { ZedValue, Value } from "./types";
 
 type ColumnName = string | string[];
 
-export class Record implements ZedValueInterface {
+export class Record implements Value {
   constructor(
     public type: TypeRecord | TypeAlias,
     public fields: Field[] | null

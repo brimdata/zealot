@@ -1,31 +1,26 @@
 import { Field, TypeRecord } from "../index";
 import * as zjson from "../../zjson";
 import { TypeDefs, ZedContext } from "../context";
-import { ZedValueInterface } from "../values/types";
-import {
-  ContainerTypeInterface,
-  SerializeTypeDefs,
-  ZedType,
-  ZedTypeInterface,
-} from "./types";
+import { Value } from "../values/types";
+import { ContainerType, SerializeTypeDefs, ZedType, Type } from "./types";
 
-export class TypeAlias implements ContainerTypeInterface {
+export class TypeAlias implements ContainerType {
   kind = "alias";
   name: string;
-  type: ZedTypeInterface;
+  type: Type;
   id?: string | number;
 
-  constructor(name: string, type: ZedTypeInterface) {
+  constructor(name: string, type: Type) {
     this.name = name;
     this.type = type;
   }
 
-  static stringify(name: string, type: ZedTypeInterface) {
+  static stringify(name: string, type: Type) {
     return name + "=(" + type.toString() + ")";
   }
 
   create(value: zjson.Value, typedefs: TypeDefs, parent?: Field) {
-    let v: ZedValueInterface;
+    let v: Value;
     if (this.type instanceof TypeRecord || this.type instanceof TypeAlias) {
       v = this.type.create(value, typedefs, parent);
     } else {

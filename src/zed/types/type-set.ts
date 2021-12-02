@@ -3,22 +3,18 @@ import { SetValue, Value } from "../../zjson";
 import { TypeDefs, ZedContext } from "../context";
 import { isNull, typeId } from "../utils";
 import { Set } from "../values/set";
-import {
-  ContainerTypeInterface,
-  SerializeTypeDefs,
-  ZedTypeInterface,
-} from "./types";
+import { ContainerType, SerializeTypeDefs, Type } from "./types";
 
-export class TypeSet implements ContainerTypeInterface {
+export class TypeSet implements ContainerType {
   id?: string | number;
   kind = "set";
-  type: ZedTypeInterface;
+  type: Type;
 
-  constructor(type: ZedTypeInterface) {
+  constructor(type: Type) {
     this.type = type;
   }
 
-  static stringify(type: ZedTypeInterface) {
+  static stringify(type: Type) {
     return `|[${typeId(type)}]|`;
   }
 

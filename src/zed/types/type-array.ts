@@ -3,22 +3,18 @@ import * as zjson from "../../zjson";
 import { TypeDefs, ZedContext } from "../context";
 import { isNull, typeId } from "../utils";
 import { Array } from "../values/array";
-import {
-  ContainerTypeInterface,
-  SerializeTypeDefs,
-  ZedTypeInterface,
-} from "./types";
+import { ContainerType, SerializeTypeDefs, Type } from "./types";
 
-export class TypeArray implements ContainerTypeInterface {
+export class TypeArray implements ContainerType {
   id?: number | string;
   kind = "array";
-  type: ZedTypeInterface;
+  type: Type;
 
-  constructor(type: ZedTypeInterface) {
+  constructor(type: Type) {
     this.type = type;
   }
 
-  static stringify(type: ZedTypeInterface) {
+  static stringify(type: Type) {
     return `[${typeId(type)}]`;
   }
 

@@ -2,22 +2,15 @@ import * as zjson from "../../zjson";
 import { TypeDefs, ZedContext } from "../context";
 import { isNull, typeId } from "../utils";
 import { ZedMap } from "../values/map";
-import {
-  ContainerTypeInterface,
-  SerializeTypeDefs,
-  ZedTypeInterface,
-} from "./types";
+import { ContainerType, SerializeTypeDefs, Type } from "./types";
 
-export class TypeMap implements ContainerTypeInterface {
+export class TypeMap implements ContainerType {
   kind = "union";
   id?: string | number;
 
-  constructor(
-    public keyType: ZedTypeInterface,
-    public valType: ZedTypeInterface
-  ) {}
+  constructor(public keyType: Type, public valType: Type) {}
 
-  static stringify(keyType: ZedTypeInterface, valType: ZedTypeInterface) {
+  static stringify(keyType: Type, valType: Type) {
     return `|{` + typeId(keyType) + ":" + typeId(valType) + "}|";
   }
 

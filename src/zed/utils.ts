@@ -14,7 +14,7 @@ import primitives, {
   PrimitiveName,
   PrimitiveTypes,
 } from "./types/type-primitives";
-import { ZedTypeInterface } from "./types/types";
+import { Type } from "./types/types";
 import { BString } from "./values/bstring";
 import { Duration } from "./values/duration";
 import { Float64 } from "./values/float64";
@@ -26,7 +26,7 @@ import { String } from "./values/string";
 import { Time } from "./values/time";
 import { ZedInt } from "./values/types";
 
-export function typeId(type: ZedTypeInterface) {
+export function typeId(type: Type) {
   if (type instanceof BasePrimitive) {
     return type.name;
   }
@@ -61,17 +61,15 @@ export function isTime(value: unknown): value is Time {
   return value instanceof Time;
 }
 
-export function isTypeAlias(type: ZedTypeInterface): type is TypeAlias {
+export function isTypeAlias(type: Type): type is TypeAlias {
   return type instanceof TypeAlias;
 }
 
-export function isNamed(type: ZedTypeInterface, name: string) {
+export function isNamed(type: Type, name: string) {
   return isTypeAlias(type) && type.name === name;
 }
 
-export function trueType<T extends ZedTypeInterface>(
-  start: ZedTypeInterface
-): T {
+export function trueType<T extends Type>(start: Type): T {
   let t = start;
   while (isTypeAlias(t)) {
     t = t.type;

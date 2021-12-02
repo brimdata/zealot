@@ -10,10 +10,11 @@ type DecodeOpts = {
 };
 
 function decode(
-  data: zjson.RootRecord,
+  data: zjson.RootRecord[],
   opts: DecodeOpts & { as: "js" }
 ): object;
 function decode(data: zjson.RootRecord, opts?: DecodeOpts): zed.Record;
+function decode(data: zjson.RootRecord[], opts?: DecodeOpts): zed.Record[];
 function decode(data: zjson.EncodedField, opts?: DecodeOpts): zed.Field;
 function decode(
   data: zjson.RootRecord | zjson.RootRecord[] | zjson.EncodedField,

@@ -3602,5 +3602,6 @@ yargs@^16.2.0:
     y18n "^5.0.5"
     yargs-parser "^20.2.2"
 
-"zed@file:../zed":
-  version "0.32.0-dev"
+"zed@git+https://github.com/brimdata/zed.git#cd206afb6c2b91a8bffd699f11d426aa51c45986":
+  version "0.33.0-dev"
+  resolved "git+https://github.com/brimdata/zed.git#cd206afb6c2b91a8bffd699f11d426aa51c45986"

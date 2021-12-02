@@ -4,22 +4,17 @@ import { TypeDefs, ZedContext } from "../context";
 import { typeId } from "../utils";
 import { Field } from "../values/field";
 import { Record } from "../values/record";
-import {
-  ContainerTypeInterface,
-  SerializeTypeDefs,
-  ZedType,
-  ZedTypeInterface,
-} from "./types";
+import { ContainerType, SerializeTypeDefs, ZedType, Type } from "./types";
 import { Null, trueType } from "../index";
-import { ZedValueInterface } from "../values/types";
+import { Value } from "../values/types";
 import { values } from "lodash";
 
 export type TypeField = {
   name: string;
-  type: ZedTypeInterface;
+  type: Type;
 };
 
-export class TypeRecord implements ContainerTypeInterface {
+export class TypeRecord implements ContainerType {
   kind = "record";
   fields: TypeField[] | null;
   id?: string | number;

@@ -54,6 +54,7 @@ export { Uint32 } from "./values/uint32";
 export { Uint64 } from "./values/uint64";
 export { Uint8 } from "./values/uint8";
 export { Union } from "./values/union";
-export { ZedValue as AnyValue } from "./values/types";
 export { Schema } from "./schema";
+export * from "./values/types";
+export * from "./types/types";
 export * from "./utils";

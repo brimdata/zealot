@@ -1,9 +1,9 @@
-import { ZedTypeInterface } from "../types/types";
+import { Type } from "../types/types";
 import { isNull } from "../utils";
-import { ZedValueInterface } from "./types";
+import { Value } from "./types";
 
-export abstract class Primitive implements ZedValueInterface {
-  abstract type: ZedTypeInterface;
+export abstract class Primitive implements Value {
+  abstract type: Type;
   abstract toJS(): any;
 
   constructor(public value: string | null = null) {}

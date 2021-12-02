@@ -4,20 +4,16 @@ import { TypeDefs } from "../context";
 import { isNull, typeId } from "../utils";
 import { Union } from "../values/union";
 import { TypeNull } from "./type-null";
-import {
-  ContainerTypeInterface,
-  SerializeTypeDefs,
-  ZedTypeInterface,
-} from "./types";
+import { ContainerType, SerializeTypeDefs, Type } from "./types";
 
 type UnionValue = [string, zjson.Value] | null;
-export class TypeUnion implements ContainerTypeInterface {
+export class TypeUnion implements ContainerType {
   kind = "union";
   id?: number | string;
 
-  constructor(public types: ZedTypeInterface[]) {}
+  constructor(public types: Type[]) {}
 
-  static stringify(types: ZedTypeInterface[]) {
+  static stringify(types: Type[]) {
     return `(${types.map(typeId).join(",")})`;
   }
 
@@ -51,7 +47,7 @@ export class TypeUnion implements ContainerTypeInterface {
     if (isNull(value)) return;
 
     const index = parseInt(value[0]);
-    const innerType = this.types[index] as ZedTypeInterface;
+    const innerType = this.types[index] as Type;
     const innerValue = value[1];
 
     if (value === null) ctx.walkTypeValues(innerType, innerValue, visit);

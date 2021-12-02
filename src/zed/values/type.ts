@@ -1,12 +1,12 @@
 import { TypeType } from "../types/type-type";
-import { ZedTypeInterface } from "../types/types";
+import { Type } from "../types/types";
 import { isNull, typeId } from "../utils";
-import { ZedValueInterface } from "./types";
+import { Value } from "./types";
 
-export class TypeValue implements ZedValueInterface {
+export class TypeValue implements Value {
   type: typeof TypeType = TypeType;
 
-  constructor(public value: ZedTypeInterface | null = null) {}
+  constructor(public value: Type | null = null) {}
 
   isUnset() {
     return isNull(this.value);

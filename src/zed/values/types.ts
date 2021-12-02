@@ -1,5 +1,5 @@
-import { Value } from "../../zjson";
-import { ZedTypeInterface } from "../types/types";
+import * as zjson from "../../zjson";
+import { Type } from "../types/types";
 import { Array } from "./array";
 import { Bool } from "./bool";
 import { BString } from "./bstring";
@@ -63,10 +63,10 @@ export type ZedInt =
   | Int32
   | Int64;
 
-export interface ZedValueInterface {
+export interface Value {
   toJS(): any;
   toString(): string;
-  serialize(): Value;
+  serialize(): zjson.Value;
   isUnset(): boolean;
-  type: ZedTypeInterface;
+  type: Type;
 }

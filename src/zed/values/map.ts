@@ -1,13 +1,10 @@
 import { TypeIp } from "../types/type-ip";
 import { TypeMap } from "../types/type-map";
 import { isNull } from "../utils";
-import { ZedValue, ZedValueInterface } from "./types";
+import { ZedValue, Value } from "./types";
 
-export class ZedMap implements ZedValueInterface {
-  constructor(
-    public type: TypeMap,
-    public value: Map<ZedValueInterface, ZedValueInterface> | null
-  ) {}
+export class ZedMap implements Value {
+  constructor(public type: TypeMap, public value: Map<Value, Value> | null) {}
 
   toString() {
     if (isNull(this.value)) return "null";
@@ -39,6 +36,6 @@ export class ZedMap implements ZedValueInterface {
   }
 }
 
-function isIPv6(v: ZedValueInterface): boolean {
+function isIPv6(v: Value): boolean {
   return v.type === TypeIp && v.toString().includes(":");
 }

@@ -2,13 +2,13 @@ import * as zjson from "../../zjson";
 import { TypeDefs, ZedContext } from "../context";
 import { getPrimitiveType, isNull, isPrimitiveName } from "../utils";
 import { TypeValue } from "../values/type";
-import { ZedValueInterface } from "../values/types";
+import { Value } from "../values/types";
 import { BasePrimitive } from "./base-primitive";
 
 export class TypeOfType extends BasePrimitive<TypeValue> {
   name = "type";
 
-  create(value: string | null, typedefs: TypeDefs): ZedValueInterface {
+  create(value: string | null, typedefs: TypeDefs): Value {
     if (isNull(value)) {
       return new TypeValue(null);
     } else {
