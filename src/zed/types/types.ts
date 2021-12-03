@@ -25,6 +25,7 @@ export type SerializeTypeDefs = {
 
 export interface Type {
   id?: string | number;
+  name?: string;
   toString(): string;
   serialize(typedefs: SerializeTypeDefs): zjson.Type;
   create(value: zjson.Value, typedefs: TypeDefs, parent?: Field): Value;
