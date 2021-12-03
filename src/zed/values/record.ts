@@ -93,7 +93,7 @@ export class Record implements Value {
     }
   }
 
-  tryField(name: string) {
+  tryField(name: string | string[]) {
     try {
       return this.getField(name);
     } catch {
