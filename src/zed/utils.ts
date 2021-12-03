@@ -12,7 +12,7 @@ import {
 import { BasePrimitive } from "./types/base-primitive";
 import primitives, {
   PrimitiveName,
-  PrimitiveTypes,
+  PrimitiveType,
 } from "./types/type-primitives";
 import { Type } from "./types/types";
 import { BString } from "./values/bstring";
@@ -94,7 +94,7 @@ export function isFloat64(value: unknown): value is Float64 {
 }
 
 export function getPrimitiveType(name: PrimitiveName) {
-  return primitives[name] as PrimitiveTypes;
+  return primitives[name] as PrimitiveType;
 }
 
 export function isPrimitive(value: unknown): value is Primitive {

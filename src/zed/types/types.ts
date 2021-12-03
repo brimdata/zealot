@@ -5,13 +5,13 @@ import { Value } from "../values/types";
 import { TypeAlias } from "./type-alias";
 import { TypeArray } from "./type-array";
 import { TypeMap } from "./type-map";
-import { PrimitiveTypes } from "./type-primitives";
+import { PrimitiveType } from "./type-primitives";
 import { TypeRecord } from "./type-record";
 import { TypeSet } from "./type-set";
 import { TypeUnion } from "./type-union";
 
 export type ZedType =
-  | PrimitiveTypes
+  | PrimitiveType
   | TypeRecord
   | TypeArray
   | TypeSet

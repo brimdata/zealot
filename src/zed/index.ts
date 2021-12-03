@@ -58,3 +58,4 @@ export { Schema } from "./schema";
 export * from "./values/types";
 export * from "./types/types";
 export * from "./utils";
+export * from "./is-type";
