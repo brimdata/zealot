@@ -1,7 +1,7 @@
-import * as zjson from '../zjson.js';
-import { DecodeStream } from '../decode-stream.js';
-import { TypeValue } from '../values/type-value.js';
-import { BasePrimitive } from './base-primitive.js';
+import * as zjson from '../zjson';
+import { DecodeStream } from '../decode-stream';
+import { TypeValue } from '../values/type-value';
+import { BasePrimitive } from './base-primitive';
 
 export class TypeOfType extends BasePrimitive<TypeValue> {
   name = 'type';

@@ -1,10 +1,10 @@
-import * as zjson from '../zjson.js';
-import { SetValue } from '../zjson.js';
-import { DecodeStream } from '../decode-stream.js';
-import { EncodeStream } from '../encode-stream.js';
-import { isNull } from '../utils/is-null.js';
-import { Set } from '../values/set.js';
-import { Type } from './types.js';
+import * as zjson from '../zjson';
+import { SetValue } from '../zjson';
+import { DecodeStream } from '../decode-stream';
+import { EncodeStream } from '../encode-stream';
+import { isNull } from '../utils/is-null';
+import { Set } from '../values/set';
+import { Type } from './types';
 
 export class TypeSet implements Type {
   kind = 'set';

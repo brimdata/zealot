@@ -1,5 +1,5 @@
-import { Float16 } from '../values/float16.js';
-import { BasePrimitive } from './base-primitive.js';
+import { Float16 } from '../values/float16';
+import { BasePrimitive } from './base-primitive';
 
 export class TypeOfFloat16 extends BasePrimitive<Float16> {
   name = 'float16';

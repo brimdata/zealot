@@ -1,6 +1,6 @@
-import { TypeUint8 } from '../types/type-uint8.js';
-import { isNull } from '../utils/is-null.js';
-import { Primitive } from './primitive.js';
+import { TypeUint8 } from '../types/type-uint8';
+import { isNull } from '../utils/is-null';
+import { Primitive } from './primitive';
 
 export class Uint8 extends Primitive {
   type: typeof TypeUint8 = TypeUint8;

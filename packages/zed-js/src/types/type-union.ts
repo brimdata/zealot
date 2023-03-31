@@ -1,9 +1,9 @@
-import * as zjson from '../zjson.js';
-import { DecodeStream } from '../decode-stream.js';
-import { EncodeStream } from '../encode-stream.js';
-import { Union } from '../values/union.js';
-import { TypeNull } from './type-null.js';
-import { Type } from './types.js';
+import * as zjson from '../zjson';
+import { DecodeStream } from '../decode-stream';
+import { EncodeStream } from '../encode-stream';
+import { Union } from '../values/union';
+import { TypeNull } from './type-null';
+import { Type } from './types';
 
 export class TypeUnion implements Type {
   kind = 'union';

@@ -1,6 +1,6 @@
-import { isNull } from '../utils/is-null.js';
-import { TypeFloat64 } from '../types/type-float64.js';
-import { Primitive } from './primitive.js';
+import { isNull } from '../utils/is-null';
+import { TypeFloat64 } from '../types/type-float64';
+import { Primitive } from './primitive';
 
 export class Float64 extends Primitive {
   type: typeof TypeFloat64 = TypeFloat64;

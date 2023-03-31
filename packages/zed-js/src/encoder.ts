@@ -1,8 +1,8 @@
-import { DefaultContext, ZedContext } from './context.js';
-import { DecodeStream } from './decode-stream.js';
-import { Field } from './values/field.js';
-import { Value } from './values/types.js';
-import * as zjson from './zjson.js';
+import { DefaultContext, ZedContext } from './context';
+import { DecodeStream } from './decode-stream';
+import { Field } from './values/field';
+import { Value } from './values/types';
+import * as zjson from './zjson';
 
 type DecodeOpts = {
   context?: ZedContext;

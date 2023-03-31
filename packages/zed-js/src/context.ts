@@ -1,18 +1,18 @@
-import { Record } from './values/record.js';
-import * as zjson from './zjson.js';
-import { DecodeStream } from './decode-stream.js';
-import { EncodeStream } from './encode-stream.js';
-import { TypeAlias } from './types/type-alias.js';
-import { TypeArray } from './types/type-array.js';
-import { TypeError } from './types/type-error.js';
-import { TypeMap } from './types/type-map.js';
-import { TypeRecord } from './types/type-record.js';
-import { TypeSet } from './types/type-set.js';
-import { TypeUnion } from './types/type-union.js';
-import { Type } from './types/types.js';
-import { Field } from './values/field.js';
-import { Value } from './values/types.js';
-import { TypeField } from './types/type-field.js';
+import { Record } from './values/record';
+import * as zjson from './zjson';
+import { DecodeStream } from './decode-stream';
+import { EncodeStream } from './encode-stream';
+import { TypeAlias } from './types/type-alias';
+import { TypeArray } from './types/type-array';
+import { TypeError } from './types/type-error';
+import { TypeMap } from './types/type-map';
+import { TypeRecord } from './types/type-record';
+import { TypeSet } from './types/type-set';
+import { TypeUnion } from './types/type-union';
+import { Type } from './types/types';
+import { Field } from './values/field';
+import { Value } from './values/types';
+import { TypeField } from './types/type-field';
 
 export type TypeDefs = { [key: string]: Type };
 

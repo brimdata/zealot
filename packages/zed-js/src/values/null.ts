@@ -1,5 +1,5 @@
-import { TypeNull } from '../types/type-null.js';
-import { Primitive } from './primitive.js';
+import { TypeNull } from '../types/type-null';
+import { Primitive } from './primitive';
 
 export class Null extends Primitive {
   type: typeof TypeNull = TypeNull;

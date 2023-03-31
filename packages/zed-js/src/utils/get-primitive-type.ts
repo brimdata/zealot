@@ -1,4 +1,4 @@
-import { getPrimitives, PrimitiveName } from '../types/type-primitives.js';
+import { getPrimitives, PrimitiveName } from '../types/type-primitives';
 
 export function getPrimitiveType(name: PrimitiveName) {
   const obj = getPrimitives();

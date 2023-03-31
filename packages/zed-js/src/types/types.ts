@@ -1,15 +1,15 @@
-import * as zjson from '../zjson.js';
-import { DecodeStream } from '../decode-stream.js';
-import { EncodeStream } from '../encode-stream.js';
-import { Field } from '../index.js';
-import { Value } from '../values/types.js';
-import { TypeAlias } from './type-alias.js';
-import { TypeArray } from './type-array.js';
-import { TypeMap } from './type-map.js';
-import { PrimitiveType } from './type-primitives.js';
-import { TypeRecord } from './type-record.js';
-import { TypeSet } from './type-set.js';
-import { TypeUnion } from './type-union.js';
+import * as zjson from '../zjson';
+import { DecodeStream } from '../decode-stream';
+import { EncodeStream } from '../encode-stream';
+import { Field } from '../index';
+import { Value } from '../values/types';
+import { TypeAlias } from './type-alias';
+import { TypeArray } from './type-array';
+import { TypeMap } from './type-map';
+import { PrimitiveType } from './type-primitives';
+import { TypeRecord } from './type-record';
+import { TypeSet } from './type-set';
+import { TypeUnion } from './type-union';
 
 export type ZedType =
   | PrimitiveType

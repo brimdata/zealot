@@ -1,10 +1,10 @@
 import { EventEmitter } from 'events';
-import { DefaultContext } from '../context.js';
-import { DecodeStream } from '../decode-stream.js';
-import { Collector, TypeDefs } from '../types.js';
-import { Type } from '../types/types.js';
-import { Value } from '../values/types.js';
-import * as zjson from '../zjson.js';
+import { DefaultContext } from '../context';
+import { DecodeStream } from '../decode-stream';
+import { Collector, TypeDefs } from '../types';
+import { Type } from '../types/types';
+import { Value } from '../values/types';
+import * as zjson from '../zjson';
 export class Channel extends EventEmitter {
   rows: Value[] = [];
   shapesMap: TypeDefs = {};

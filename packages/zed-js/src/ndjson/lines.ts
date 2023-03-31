@@ -1,6 +1,6 @@
-import { parse } from './parse.js';
-import { NEW_LINE, pipeJson } from './pipe_json.js';
-import { pipeText } from './pipe_text.js';
+import { parse } from './parse';
+import { NEW_LINE, pipeJson } from './pipe_json';
+import { pipeText } from './pipe_text';
 
 export async function* eachLine(
   readable: ReadableStream<Uint8Array> | NodeJS.ReadableStream | null

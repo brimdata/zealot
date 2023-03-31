@@ -1,5 +1,5 @@
-import { createTime } from './time.js';
-import { createSpan } from './span.js';
+import { createTime } from './time';
+import { createSpan } from './span';
 
 test('Date constructor', () => {
   const t = createTime(new Date(1));

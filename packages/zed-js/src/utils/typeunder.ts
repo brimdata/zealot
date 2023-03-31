@@ -1,5 +1,5 @@
-import { Any } from '../index.js';
-import { TypeAlias } from '../types/type-alias.js';
+import { Any } from '../index';
+import { TypeAlias } from '../types/type-alias';
 
 export function typeunder(value: Any): Any {
   if (value instanceof TypeAlias) {

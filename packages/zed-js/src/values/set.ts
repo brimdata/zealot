@@ -1,7 +1,7 @@
-import { EncodeStream } from '../encode-stream.js';
-import { TypeSet } from '../types/type-set.js';
-import { isNull } from '../utils/is-null.js';
-import { JSOptions, Value } from './types.js';
+import { EncodeStream } from '../encode-stream';
+import { TypeSet } from '../types/type-set';
+import { isNull } from '../utils/is-null';
+import { JSOptions, Value } from './types';
 
 export class Set implements Value {
   constructor(public type: TypeSet, public items: Value[] | null) {}

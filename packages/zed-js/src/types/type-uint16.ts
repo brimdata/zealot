@@ -1,5 +1,5 @@
-import { Uint16 } from '../values/uint16.js';
-import { BasePrimitive } from './base-primitive.js';
+import { Uint16 } from '../values/uint16';
+import { BasePrimitive } from './base-primitive';
 
 export class TypeOfUint16 extends BasePrimitive<Uint16> {
   name = 'uint16';

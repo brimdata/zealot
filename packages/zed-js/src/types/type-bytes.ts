@@ -1,5 +1,5 @@
-import { Bytes } from '../values/bytes.js';
-import { BasePrimitive } from './base-primitive.js';
+import { Bytes } from '../values/bytes';
+import { BasePrimitive } from './base-primitive';
 
 export class TypeOfBytes extends BasePrimitive<Bytes> {
   name = 'bytes';

@@ -1,5 +1,5 @@
-import { TypeBool } from '../types/type-bool.js';
-import { Primitive } from './primitive.js';
+import { TypeBool } from '../types/type-bool';
+import { Primitive } from './primitive';
 
 export class Bool extends Primitive {
   type: typeof TypeBool = TypeBool;

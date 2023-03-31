@@ -1,7 +1,7 @@
-import * as zjson from '../zjson.js';
-import { DecodeStream } from '../decode-stream.js';
-import { Value } from '../values/types.js';
-import { Type } from './types.js';
+import * as zjson from '../zjson';
+import { DecodeStream } from '../decode-stream';
+import { Value } from '../values/types';
+import { Type } from './types';
 
 export abstract class BasePrimitive<_T> implements Type {
   kind = 'primitive';

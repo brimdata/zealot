@@ -1,6 +1,6 @@
-import { baseValue } from '../utils/base-value.js';
-import { Record } from './record.js';
-import { Value } from './types.js';
+import { baseValue } from '../utils/base-value';
+import { Record } from './record';
+import { Value } from './types';
 
 export class Field {
   constructor(

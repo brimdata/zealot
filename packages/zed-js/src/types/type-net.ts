@@ -1,5 +1,5 @@
-import { Net } from '../values/net.js';
-import { BasePrimitive } from './base-primitive.js';
+import { Net } from '../values/net';
+import { BasePrimitive } from './base-primitive';
 
 export class TypeOfNet extends BasePrimitive<Net> {
   name = 'net';

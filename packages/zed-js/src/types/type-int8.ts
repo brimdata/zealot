@@ -1,5 +1,5 @@
-import { Int8 } from '../values/int8.js';
-import { BasePrimitive } from './base-primitive.js';
+import { Int8 } from '../values/int8';
+import { BasePrimitive } from './base-primitive';
 
 export class TypeOfInt8 extends BasePrimitive<Int8> {
   name = 'int8';

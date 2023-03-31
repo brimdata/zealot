@@ -1,10 +1,10 @@
-import { Record } from '../values/record.js';
-import { Array } from '../values/array.js';
-import { ZedMap } from '../values/map.js';
-import { Set } from '../values/set.js';
-import { Union } from '../values/union.js';
-import { Error } from '../values/error.js';
-import { TypeValue } from '../values/type-value.js';
+import { Record } from '../values/record';
+import { Array } from '../values/array';
+import { ZedMap } from '../values/map';
+import { Set } from '../values/set';
+import { Union } from '../values/union';
+import { Error } from '../values/error';
+import { TypeValue } from '../values/type-value';
 
 const containers = [Record, Array, Set, Union, ZedMap, Error, TypeValue];
 

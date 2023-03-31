@@ -1,9 +1,9 @@
-import * as zjson from '../zjson.js';
-import { DecodeStream } from '../decode-stream.js';
-import { EncodeStream } from '../encode-stream.js';
-import { isNull } from '../utils/is-null.js';
-import { ZedMap } from '../values/map.js';
-import { Type } from './types.js';
+import * as zjson from '../zjson';
+import { DecodeStream } from '../decode-stream';
+import { EncodeStream } from '../encode-stream';
+import { isNull } from '../utils/is-null';
+import { ZedMap } from '../values/map';
+import { Type } from './types';
 
 export class TypeMap implements Type {
   kind = 'union';

@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/no-array-constructor */
-import * as zjson from '../zjson.js';
-import { DecodeStream } from '../decode-stream.js';
-import { EncodeStream } from '../encode-stream.js';
-import { isNull } from '../utils/is-null.js';
-import { Array } from '../values/array.js';
-import { Type } from './types.js';
+import * as zjson from '../zjson';
+import { DecodeStream } from '../decode-stream';
+import { EncodeStream } from '../encode-stream';
+import { isNull } from '../utils/is-null';
+import { Array } from '../values/array';
+import { Type } from './types';
 
 export class TypeArray implements Type {
   id?: number | string;

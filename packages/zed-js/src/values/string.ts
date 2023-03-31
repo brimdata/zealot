@@ -1,5 +1,5 @@
-import { TypeString } from '../types/type-string.js';
-import { Primitive } from './primitive.js';
+import { TypeString } from '../types/type-string';
+import { Primitive } from './primitive';
 
 export class String extends Primitive {
   type: typeof TypeString = TypeString;

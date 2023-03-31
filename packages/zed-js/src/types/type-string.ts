@@ -1,5 +1,5 @@
-import { String } from '../values/string.js';
-import { BasePrimitive } from './base-primitive.js';
+import { String } from '../values/string';
+import { BasePrimitive } from './base-primitive';
 export class TypeOfString extends BasePrimitive<String> {
   name = 'string';
 

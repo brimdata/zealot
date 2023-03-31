@@ -1,5 +1,5 @@
-import { Int64 } from '../values/int64.js';
-import { BasePrimitive } from './base-primitive.js';
+import { Int64 } from '../values/int64';
+import { BasePrimitive } from './base-primitive';
 
 export class TypeOfInt64 extends BasePrimitive<Int64> {
   name = 'int64';

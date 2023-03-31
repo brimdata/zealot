@@ -1,10 +1,10 @@
-import * as zjson from '../zjson.js';
-import { DecodeStream } from '../decode-stream.js';
-import { EncodeStream } from '../encode-stream.js';
-import { Field } from '../values/field.js';
-import { Value } from '../values/types.js';
-import { TypeRecord } from './type-record.js';
-import { Type } from './types.js';
+import * as zjson from '../zjson';
+import { DecodeStream } from '../decode-stream';
+import { EncodeStream } from '../encode-stream';
+import { Field } from '../values/field';
+import { Value } from '../values/types';
+import { TypeRecord } from './type-record';
+import { Type } from './types';
 
 export class TypeAlias implements Type {
   kind = 'alias';

@@ -1,8 +1,8 @@
-import * as zjson from '../zjson.js';
-import { DecodeStream } from '../decode-stream.js';
-import { EncodeStream } from '../encode-stream.js';
-import { Error } from '../values/error.js';
-import { Type } from './types.js';
+import * as zjson from '../zjson';
+import { DecodeStream } from '../decode-stream';
+import { EncodeStream } from '../encode-stream';
+import { Error } from '../values/error';
+import { Type } from './types';
 export class TypeError implements Type {
   kind = 'error';
 

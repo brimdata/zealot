@@ -1,1 +1,1 @@
-export * from './lines.js';
+export * from './lines';

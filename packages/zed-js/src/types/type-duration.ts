@@ -1,5 +1,5 @@
-import { Duration } from '../values/duration.js';
-import { BasePrimitive } from './base-primitive.js';
+import { Duration } from '../values/duration';
+import { BasePrimitive } from './base-primitive';
 
 export class TypeOfDuration extends BasePrimitive<Duration> {
   name = 'duration';

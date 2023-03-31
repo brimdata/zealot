@@ -1,17 +1,17 @@
-import { Record } from './values/record.js';
-import { Field } from './values/field.js';
-import { TypeField } from './types/type-field.js';
-import { DefaultContext } from './context.js';
-import { TypeRecord } from './types/type-record.js';
-import { decode, encode } from './encoder.js';
-import { isValue } from './utils/is-value.js';
-import { Value } from './values/types.js';
-import { Null } from './values/null.js';
-import { String } from './values/string.js';
-import { Time } from './values/time.js';
-import { Uint64 } from './values/uint64.js';
-import { Float64 } from './values/float64.js';
-import { Ip } from './values/ip.js';
+import { Record } from './values/record';
+import { Field } from './values/field';
+import { TypeField } from './types/type-field';
+import { DefaultContext } from './context';
+import { TypeRecord } from './types/type-record';
+import { decode, encode } from './encoder';
+import { isValue } from './utils/is-value';
+import { Value } from './values/types';
+import { Null } from './values/null';
+import { String } from './values/string';
+import { Time } from './values/time';
+import { Uint64 } from './values/uint64';
+import { Float64 } from './values/float64';
+import { Ip } from './values/ip';
 
 // Convert a js object into a zed record
 

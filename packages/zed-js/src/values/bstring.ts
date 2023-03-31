@@ -1,5 +1,5 @@
-import { TypeBString } from '../types/type-bstring.js';
-import { Primitive } from './primitive.js';
+import { TypeBString } from '../types/type-bstring';
+import { Primitive } from './primitive';
 
 export class BString extends Primitive {
   type: typeof TypeBString = TypeBString;

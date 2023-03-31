@@ -1,4 +1,4 @@
-import { createError } from './error.js';
+import { createError } from './error';
 
 test('server error', () => {
   const e = createError({ kind: 'Bad', error: 'things can happen' });

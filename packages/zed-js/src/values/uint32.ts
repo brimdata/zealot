@@ -1,6 +1,6 @@
-import { TypeUint32 } from '../types/type-uint32.js';
-import { isNull } from '../utils/is-null.js';
-import { Primitive } from './primitive.js';
+import { TypeUint32 } from '../types/type-uint32';
+import { isNull } from '../utils/is-null';
+import { Primitive } from './primitive';
 
 export class Uint32 extends Primitive {
   type: typeof TypeUint32 = TypeUint32;

@@ -1,4 +1,4 @@
-import { Ts } from '../types.js';
+import { Ts } from '../types';
 
 function hasOwnProperty<X extends object, Y extends PropertyKey>(
   obj: X,

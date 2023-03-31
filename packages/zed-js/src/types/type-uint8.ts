@@ -1,5 +1,5 @@
-import { Uint8 } from '../values/uint8.js';
-import { BasePrimitive } from './base-primitive.js';
+import { Uint8 } from '../values/uint8';
+import { BasePrimitive } from './base-primitive';
 
 export class TypeOfUint8 extends BasePrimitive<Uint8> {
   name = 'uint8';

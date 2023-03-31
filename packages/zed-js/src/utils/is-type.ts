@@ -1,6 +1,6 @@
-import { isContainerType } from '../types/type-containers.js';
-import { isPrimitiveType } from '../types/type-primitives.js';
-import { Type } from '../types/types.js';
+import { isContainerType } from '../types/type-containers';
+import { isPrimitiveType } from '../types/type-primitives';
+import { Type } from '../types/types';
 
 export function isType(value: unknown): value is Type {
   return isPrimitiveType(value) || isContainerType(value);

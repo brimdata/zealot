@@ -1,9 +1,9 @@
-import * as zjson from './zjson.js';
-import { TypeDefs, ZedContext } from './context.js';
-import { TypeField } from './types/type-field.js';
-import { PrimitiveName } from './types/type-primitives.js';
-import { Type } from './types/types.js';
-import { getPrimitiveType } from './utils/get-primitive-type.js';
+import * as zjson from './zjson';
+import { TypeDefs, ZedContext } from './context';
+import { TypeField } from './types/type-field';
+import { PrimitiveName } from './types/type-primitives';
+import { Type } from './types/types';
+import { getPrimitiveType } from './utils/get-primitive-type';
 
 export class DecodeStream {
   public typedefs: TypeDefs = {};

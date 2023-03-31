@@ -1,10 +1,10 @@
-import { TypeAlias } from './type-alias.js';
-import { TypeArray } from './type-array.js';
-import { TypeMap } from './type-map.js';
-import { TypeRecord } from './type-record.js';
-import { TypeSet } from './type-set.js';
-import { TypeUnion } from './type-union.js';
-import { TypeError } from './type-error.js';
+import { TypeAlias } from './type-alias';
+import { TypeArray } from './type-array';
+import { TypeMap } from './type-map';
+import { TypeRecord } from './type-record';
+import { TypeSet } from './type-set';
+import { TypeUnion } from './type-union';
+import { TypeError } from './type-error';
 
 const containers = {
   record: TypeRecord,

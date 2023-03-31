@@ -1,5 +1,5 @@
-import { Time } from './time.js';
-import { createData } from '../factory.js';
+import { Time } from './time';
+import { createData } from '../factory';
 
 test('toDate()', () => {
   new Time('2020-02-25T16:03:13.987654321Z').toDate();
