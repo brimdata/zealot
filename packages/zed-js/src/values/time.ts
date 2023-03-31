@@ -1,6 +1,6 @@
-import { TypeTime } from '../types/type-time.js';
-import { isNull } from '../utils/is-null.js';
-import { Primitive } from './primitive.js';
+import { TypeTime } from '../types/type-time';
+import { isNull } from '../utils/is-null';
+import { Primitive } from './primitive';
 
 export class Time extends Primitive {
   type: typeof TypeTime = TypeTime;

@@ -1,9 +1,9 @@
-import * as zjson from '../zjson.js';
-import { EncodeStream } from '../encode-stream.js';
-import { TypeUnion } from '../types/type-union.js';
-import { Type } from '../types/types.js';
-import { isNull } from '../utils/is-null.js';
-import { Value } from './types.js';
+import * as zjson from '../zjson';
+import { EncodeStream } from '../encode-stream';
+import { TypeUnion } from '../types/type-union';
+import { Type } from '../types/types';
+import { isNull } from '../utils/is-null';
+import { Value } from './types';
 
 export class Union implements Value {
   constructor(

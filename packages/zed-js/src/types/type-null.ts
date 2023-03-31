@@ -1,5 +1,5 @@
-import { Null } from '../values/null.js';
-import { BasePrimitive } from './base-primitive.js';
+import { Null } from '../values/null';
+import { BasePrimitive } from './base-primitive';
 
 export class TypeOfNull extends BasePrimitive<Null> {
   name = 'null';

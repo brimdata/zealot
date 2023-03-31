@@ -1,5 +1,5 @@
-import { Typename } from '../values/typename.js';
-import { BasePrimitive } from './base-primitive.js';
+import { Typename } from '../values/typename';
+import { BasePrimitive } from './base-primitive';
 
 export class TypeOfTypename extends BasePrimitive<Typename> {
   name = 'typename';

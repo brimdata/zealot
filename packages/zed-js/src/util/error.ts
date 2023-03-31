@@ -1,4 +1,4 @@
-import { isObject, isString } from './utils.js';
+import { isObject, isString } from './utils';
 
 export function createError(input: unknown) {
   if (input instanceof Error) return input;

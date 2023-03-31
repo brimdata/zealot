@@ -1,6 +1,6 @@
-import { isNull } from '../utils/is-null.js';
-import { TypeFloat32 } from '../types/type-float32.js';
-import { Primitive } from './primitive.js';
+import { isNull } from '../utils/is-null';
+import { TypeFloat32 } from '../types/type-float32';
+import { Primitive } from './primitive';
 
 export class Float32 extends Primitive {
   type: typeof TypeFloat32 = TypeFloat32;

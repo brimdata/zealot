@@ -1,7 +1,7 @@
-import { isNull } from '../utils/is-null.js';
-import { TypeUint64 } from '../types/type-uint64.js';
-import { Primitive } from './primitive.js';
-import { JSOptions } from './types.js';
+import { isNull } from '../utils/is-null';
+import { TypeUint64 } from '../types/type-uint64';
+import { Primitive } from './primitive';
+import { JSOptions } from './types';
 
 export class Uint64 extends Primitive {
   type: typeof TypeUint64 = TypeUint64;

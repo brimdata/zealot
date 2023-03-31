@@ -1,13 +1,13 @@
-import * as zjson from '../zjson.js';
-import { DecodeStream } from '../decode-stream.js';
-import { EncodeStream } from '../encode-stream.js';
-import { isNull } from '../utils/is-null.js';
-import { trueType } from '../utils/true-type.js';
-import { Field } from '../values/field.js';
-import { Null } from '../values/null.js';
-import { Record } from '../values/record.js';
-import { TypeField } from './type-field.js';
-import { Type } from './types.js';
+import * as zjson from '../zjson';
+import { DecodeStream } from '../decode-stream';
+import { EncodeStream } from '../encode-stream';
+import { isNull } from '../utils/is-null';
+import { trueType } from '../utils/true-type';
+import { Field } from '../values/field';
+import { Null } from '../values/null';
+import { Record } from '../values/record';
+import { TypeField } from './type-field';
+import { Type } from './types';
 
 export type FieldData = { name: string; type: Type };
 export class TypeRecord implements Type {

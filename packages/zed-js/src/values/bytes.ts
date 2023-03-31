@@ -1,5 +1,5 @@
-import { TypeBytes } from '../types/type-bytes.js';
-import { Primitive } from './primitive.js';
+import { TypeBytes } from '../types/type-bytes';
+import { Primitive } from './primitive';
 
 export class Bytes extends Primitive {
   type: typeof TypeBytes = TypeBytes;

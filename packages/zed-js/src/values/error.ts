@@ -1,7 +1,7 @@
-import * as zjson from '../zjson.js';
-import { EncodeStream } from '../encode-stream.js';
-import { TypeError } from '../types/type-error.js';
-import { Value } from './types.js';
+import * as zjson from '../zjson';
+import { EncodeStream } from '../encode-stream';
+import { TypeError } from '../types/type-error';
+import { Value } from './types';
 
 export class Error implements Value {
   constructor(public type: TypeError, public value: Value | null) {}

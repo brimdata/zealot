@@ -1,5 +1,5 @@
-import { BString } from '../values/bstring.js';
-import { BasePrimitive } from './base-primitive.js';
+import { BString } from '../values/bstring';
+import { BasePrimitive } from './base-primitive';
 
 export class TypeOfBString extends BasePrimitive<BString> {
   name = 'bstring';

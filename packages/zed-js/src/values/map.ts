@@ -1,8 +1,8 @@
-import { EncodeStream } from '../encode-stream.js';
-import { TypeIp } from '../types/type-ip.js';
-import { TypeMap } from '../types/type-map.js';
-import { isNull } from '../utils/is-null.js';
-import { JSOptions, Value } from './types.js';
+import { EncodeStream } from '../encode-stream';
+import { TypeIp } from '../types/type-ip';
+import { TypeMap } from '../types/type-map';
+import { isNull } from '../utils/is-null';
+import { JSOptions, Value } from './types';
 
 export class ZedMap implements Value {
   constructor(public type: TypeMap, public value: Map<Value, Value> | null) {}

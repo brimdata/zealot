@@ -1,12 +1,12 @@
-import { EncodeStream } from '../encode-stream.js';
-import { TypeAlias } from '../types/type-alias.js';
-import { TypeRecord } from '../types/type-record.js';
-import { ZedType } from '../types/types.js';
-import { flatColumns } from '../utils/flat-columns.js';
-import { trueType } from '../utils/true-type.js';
-import { Field } from './field.js';
-import { Null } from './null.js';
-import { ZedValue, Value, JSOptions } from './types.js';
+import { EncodeStream } from '../encode-stream';
+import { TypeAlias } from '../types/type-alias';
+import { TypeRecord } from '../types/type-record';
+import { ZedType } from '../types/types';
+import { flatColumns } from '../utils/flat-columns';
+import { trueType } from '../utils/true-type';
+import { Field } from './field';
+import { Null } from './null';
+import { ZedValue, Value, JSOptions } from './types';
 
 type ColumnName = string | string[];
 

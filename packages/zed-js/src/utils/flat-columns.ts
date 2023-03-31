@@ -1,6 +1,6 @@
-import { TypeRecord } from '../types/type-record.js';
-import { Type } from '../types/types.js';
-import { trueType } from './true-type.js';
+import { TypeRecord } from '../types/type-record';
+import { Type } from '../types/types';
+import { trueType } from './true-type';
 
 export function flatColumns(
   type: Type,

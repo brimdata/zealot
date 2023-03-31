@@ -1,5 +1,5 @@
-import { Ip } from '../values/ip.js';
-import { BasePrimitive } from './base-primitive.js';
+import { Ip } from '../values/ip';
+import { BasePrimitive } from './base-primitive';
 
 export class TypeOfIp extends BasePrimitive<Ip> {
   name = 'ip';

@@ -1,5 +1,5 @@
-import { TimeArg, createTime } from './time.js';
-import { Ts } from '../types.js';
+import { TimeArg, createTime } from './time';
+import { Ts } from '../types';
 
 export interface Span {
   ts: Ts;

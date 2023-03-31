@@ -1,11 +1,11 @@
-import { decode } from '../encoder.js';
+import { decode } from '../encoder';
 import {
   IsoAbortSignal,
   IsoResponse,
   LoadContentType,
   LoadFormat,
   ResponseFormat,
-} from './types.js';
+} from './types';
 
 export function parseContent(resp: IsoResponse) {
   if (resp.status === 204) return Promise.resolve(null);

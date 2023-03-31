@@ -1,4 +1,4 @@
-import { isDate, isBigInt, isTs, isFracSec } from './utils.js';
+import { isDate, isBigInt, isTs, isFracSec } from './utils';
 
 export interface Ts {
   sec: number;

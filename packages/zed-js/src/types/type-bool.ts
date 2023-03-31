@@ -1,5 +1,5 @@
-import { Bool } from '../values/bool.js';
-import { BasePrimitive } from './base-primitive.js';
+import { Bool } from '../values/bool';
+import { BasePrimitive } from './base-primitive';
 
 export class TypeOfBool extends BasePrimitive<Bool> {
   name = 'bool';

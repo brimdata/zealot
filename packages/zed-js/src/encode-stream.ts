@@ -1,8 +1,8 @@
-import * as zjson from './zjson.js';
-import { Type } from './types/types.js';
-import { Value } from './values/types.js';
-import { TypeValue } from './values/type-value.js';
-import { isPrimitiveType } from './types/type-primitives.js';
+import * as zjson from './zjson';
+import { Type } from './types/types';
+import { Value } from './values/types';
+import { TypeValue } from './values/type-value';
+import { isPrimitiveType } from './types/type-primitives';
 
 export class EncodeStream {
   private id = 30;

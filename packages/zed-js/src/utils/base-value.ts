@@ -1,5 +1,5 @@
-import { Any } from '../index.js';
-import { Union } from '../values/union.js';
+import { Any } from '../index';
+import { Union } from '../values/union';
 
 export function baseValue(value: Any | null): Any | null {
   if (value instanceof Union) {

@@ -1,5 +1,5 @@
-import { Time } from '../values/time.js';
-import { BasePrimitive } from './base-primitive.js';
+import { Time } from '../values/time';
+import { BasePrimitive } from './base-primitive';
 
 export class TypeOfTime extends BasePrimitive<Time> {
   name = 'time';

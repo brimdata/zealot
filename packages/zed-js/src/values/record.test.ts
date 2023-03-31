@@ -1,4 +1,4 @@
-import { createRecord } from '../factory.js';
+import { createRecord } from '../factory';
 
 const r = createRecord({
   status: 'pending',

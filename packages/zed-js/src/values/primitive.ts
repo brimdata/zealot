@@ -1,6 +1,6 @@
-import { Type } from '../types/types.js';
-import { isNull } from '../utils/is-null.js';
-import { Value } from './types.js';
+import { Type } from '../types/types';
+import { isNull } from '../utils/is-null';
+import { Value } from './types';
 
 export abstract class Primitive implements Value {
   abstract type: Type;

@@ -1,16 +1,9 @@
 import { EventSourcePolyfill } from 'event-source-polyfill';
-import { PoolConfig, PoolStats } from '../types.js';
-import { ResultStream } from '../query/result-stream.js';
-import { createError } from '../util/error.js';
-import * as Types from './types.js';
-import {
-  accept,
-  defaults,
-  json,
-  parseContent,
-  toJS,
-  wrapAbort,
-} from './utils.js';
+import { PoolConfig, PoolStats } from '../types';
+import { ResultStream } from '../query/result-stream';
+import { createError } from '../util/error';
+import * as Types from './types';
+import { accept, defaults, json, parseContent, toJS, wrapAbort } from './utils';
 
 export abstract class BaseClient {
   public abstract fetch: Types.IsoFetch;

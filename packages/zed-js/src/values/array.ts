@@ -1,7 +1,7 @@
-import { EncodeStream } from '../encode-stream.js';
-import { TypeArray } from '../types/type-array.js';
-import { isNull } from '../utils/is-null.js';
-import { JSOptions, Value } from './types.js';
+import { EncodeStream } from '../encode-stream';
+import { TypeArray } from '../types/type-array';
+import { isNull } from '../utils/is-null';
+import { JSOptions, Value } from './types';
 
 export class Array implements Value {
   constructor(public type: TypeArray, public items: Value[] | null) {}
