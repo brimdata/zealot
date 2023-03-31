@@ -1,5 +1,6 @@
 import { eachLine } from '../ndjson/lines.js';
-import { JSOptions, zjson } from '@brimdata/zed-js';
+import { JSOptions } from '../values/types.js';
+import * as zjson from '../zjson.js';
 import { Channel } from './channel.js';
 import { Collector } from '../types.js';
 import { IsoResponse } from '../client/types.js';
