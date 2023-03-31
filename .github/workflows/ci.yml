@@ -9,6 +9,11 @@ jobs:
   main:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
       - name: Install Go
         uses: actions/setup-go@v2
         with:
@@ -19,11 +24,6 @@ jobs:
         with:
           cache: yarn
           node-version-file: .node-version
-
-      - name: Checkout Repo
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
 
       - name: Set Shas
         uses: nrwl/nx-set-shas@v3
