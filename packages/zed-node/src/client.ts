@@ -7,6 +7,8 @@ import {
 import nodeFetch from 'node-fetch';
 
 export class Client extends BaseClient {
+  // eslint-disable-next-line
+  // @ts-ignore
   public fetch = nodeFetch;
 
   async load(
@@ -22,6 +24,8 @@ export class Client extends BaseClient {
     const res = await this.send({
       path: `/pool/${poolId}/branch/${encodeURIComponent(branch)}`,
       method: 'POST',
+      // eslint-disable-next-line
+      // @ts-ignore
       body: data,
       headers,
       contentType: getLoadContentType(opts.format) ?? '',
