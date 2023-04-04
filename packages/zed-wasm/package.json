@@ -1,7 +1,7 @@
 {
   "name": "@brimdata/zed-wasm",
-  "version": "0.0.8",
-  "homepage": "https://github.com/brimdata/zed?",
+  "version": "0.0.9",
+  "homepage": "https://github.com/brimdata/zed",
   "type": "module",
   "keywords": [
     "zed",
