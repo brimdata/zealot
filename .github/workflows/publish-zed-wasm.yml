@@ -1,6 +1,6 @@
 name: NPM Publish @brimdata/zed-wasm
 on:
-  push:
+  pull_request:
     paths:
       - './packages/zed-wasm/package.json'
 
