@@ -1,0 +1,33 @@
+on: push
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Install Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: '1.19'
+
+      - name: Install Node
+        uses: actions/setup-node@v3
+        with:
+          cache: yarn
+          node-version-file: .node-version
+
+      - name: Yarn
+        run: yarn
+
+      - name: Test Zed Wasm
+        run: yarn nx run-many --targets=lint,test,build --projects=zed-wasm
+
+      - name: Publish To NPM
+        uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
+          package: ./packages/zed-wasm/package.json

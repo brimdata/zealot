@@ -1389,7 +1389,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@brimdata/zed-js@*, @brimdata/zed-js@workspace:packages/zed-js":
+"@brimdata/zed-js@0.0.6, @brimdata/zed-js@^0.0.6, @brimdata/zed-js@workspace:packages/zed-js":
   version: 0.0.0-use.local
   resolution: "@brimdata/zed-js@workspace:packages/zed-js"
   dependencies:
@@ -1403,11 +1403,12 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@brimdata/zed-node@workspace:packages/zed-node"
   dependencies:
+    "@brimdata/zed-js": ^0.0.6
     "@types/fs-extra": ^11.0.1
     "@types/node-fetch": ^2.6.2
     fs-extra: ^11.1.1
     node-fetch: ^2.6.2
-    zed: "brimdata/zed#5be50e590207bd953e02eff74f85c0a25fac955c"
+    zed: "github:brimdata/zed#main"
   languageName: unknown
   linkType: soft
 
@@ -1415,7 +1416,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@brimdata/zed-wasm@workspace:packages/zed-wasm"
   dependencies:
-    "@brimdata/zed-js": "*"
+    "@brimdata/zed-js": 0.0.6
     "@types/golang-wasm": ^1.15.0
     golang-wasm: "github:teamortix/golang-wasm#master"
   languageName: unknown
@@ -3955,24 +3956,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"bson@npm:~1.0.4":
-  version: 1.0.9
-  resolution: "bson@npm:1.0.9"
-  checksum: 3614a3bd8158abcac8544613a4cda239f74e9371b2c0e9bc41b2a2770b3ea7df992ba6f16bb764dec1807078051383a80a1027c9ffc6b06adc60bc33e6b7d6dc
-  languageName: node
-  linkType: hard
-
 "buffer-from@npm:^1.0.0":
   version: 1.1.2
   resolution: "buffer-from@npm:1.1.2"
   checksum: 0448524a562b37d4d7ed9efd91685a5b77a50672c556ea254ac9a6d30e3403a517d8981f10e565db24e8339413b43c97ca2951f10e399c6125a0d8911f5679bb
-  languageName: node
-  linkType: hard
-
-"buffer-shims@npm:~1.0.0":
-  version: 1.0.0
-  resolution: "buffer-shims@npm:1.0.0"
-  checksum: 4defd1ffc9b270708ea39c17cac75c91c520c8e2f1d28a4d0ec74dc77445cbf8fc162003f0530fd1f81340347e9a26863d5aa27cd3cc351ec1d0361777d15ace
   languageName: node
   linkType: hard
 
@@ -4322,13 +4309,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"core-util-is@npm:~1.0.0":
-  version: 1.0.3
-  resolution: "core-util-is@npm:1.0.3"
-  checksum: 9de8597363a8e9b9952491ebe18167e3b36e7707569eed0ebf14f8bba773611376466ae34575bca8cfe3c767890c859c74056084738f09d4e4a6f902b2ad7d99
-  languageName: node
-  linkType: hard
-
 "cosmiconfig@npm:^6.0.0":
   version: 6.0.0
   resolution: "cosmiconfig@npm:6.0.0"
@@ -4668,13 +4648,6 @@ __metadata:
   version: 0.9.3
   resolution: "es-module-lexer@npm:0.9.3"
   checksum: 84bbab23c396281db2c906c766af58b1ae2a1a2599844a504df10b9e8dc77ec800b3211fdaa133ff700f5703d791198807bba25d9667392d27a5e9feda344da8
-  languageName: node
-  linkType: hard
-
-"es6-promise@npm:3.2.1":
-  version: 3.2.1
-  resolution: "es6-promise@npm:3.2.1"
-  checksum: ef02b46d74d5a5f3d6fcd0e8378f60c27c2c521927efc7a6126f20018b11bd100608e8ade70daea4bb3b2703dd355a304400665a3d659026d8bc5e441b52ab60
   languageName: node
   linkType: hard
 
@@ -5754,7 +5727,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"inherits@npm:2, inherits@npm:^2.0.3, inherits@npm:^2.0.4, inherits@npm:~2.0.1":
+"inherits@npm:2, inherits@npm:^2.0.3, inherits@npm:^2.0.4":
   version: 2.0.4
   resolution: "inherits@npm:2.0.4"
   checksum: 4a48a733847879d6cf6691860a6b1e3f0f4754176e4d71494c41f3475553768b10f84b5ce1d40fbd0e34e6bfbb864ee35858ad4dd2cf31e02fc4a154b724d7f1
@@ -5880,13 +5853,6 @@ __metadata:
   dependencies:
     is-docker: ^2.0.0
   checksum: 20849846ae414997d290b75e16868e5261e86ff5047f104027026fd61d8b5a9b0b3ade16239f35e1a067b3c7cc02f70183cb661010ed16f4b6c7c93dad1b19d8
-  languageName: node
-  linkType: hard
-
-"isarray@npm:~1.0.0":
-  version: 1.0.0
-  resolution: "isarray@npm:1.0.0"
-  checksum: f032df8e02dce8ec565cf2eb605ea939bdccea528dbcf565cdf92bfa2da9110461159d86a537388ef1acef8815a330642d7885b29010e8f7eac967c9993b65ab
   languageName: node
   linkType: hard
 
@@ -7348,27 +7314,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mongodb-core@npm:2.1.20":
-  version: 2.1.20
-  resolution: "mongodb-core@npm:2.1.20"
-  dependencies:
-    bson: ~1.0.4
-    require_optional: ~1.0.0
-  checksum: 6491e66d82f3f40e4f1ddf37a6374f019ac0113b2da097d97db34209ee8576938644726fa871c65833253c1ea07a9d099e363b2db48176828b7dfdbddafd59f7
-  languageName: node
-  linkType: hard
-
-"mongodb@npm:^2.2.27":
-  version: 2.2.36
-  resolution: "mongodb@npm:2.2.36"
-  dependencies:
-    es6-promise: 3.2.1
-    mongodb-core: 2.1.20
-    readable-stream: 2.2.7
-  checksum: 238b6c7eba7584d69822db2f9fa168e687dec9658e7ea4aa517b652f90c26632ed99269f83e7091ee18785d2d44e2d765946ca214a44ea90bf49a3104d9c7679
-  languageName: node
-  linkType: hard
-
 "ms@npm:2.1.2":
   version: 2.1.2
   resolution: "ms@npm:2.1.2"
@@ -7907,13 +7852,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"process-nextick-args@npm:~1.0.6":
-  version: 1.0.7
-  resolution: "process-nextick-args@npm:1.0.7"
-  checksum: 41224fbc803ac6c96907461d4dfc20942efa3ca75f2d521bcf7cf0e89f8dec127fb3fb5d76746b8fb468a232ea02d84824fae08e027aec185fd29049c66d49f8
-  languageName: node
-  linkType: hard
-
 "promise-inflight@npm:^1.0.1":
   version: 1.0.1
   resolution: "promise-inflight@npm:1.0.1"
@@ -8023,21 +7961,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"readable-stream@npm:2.2.7":
-  version: 2.2.7
-  resolution: "readable-stream@npm:2.2.7"
-  dependencies:
-    buffer-shims: ~1.0.0
-    core-util-is: ~1.0.0
-    inherits: ~2.0.1
-    isarray: ~1.0.0
-    process-nextick-args: ~1.0.6
-    string_decoder: ~1.0.0
-    util-deprecate: ~1.0.1
-  checksum: 7be1334daa728ad9e4440c35ca5cb3e67b9529e80ce82f9da2a3f7b4ba27875634e75b87c5232c8d478dfe617001119addf1c51a4f7bdcdbdcf3308fc7383c84
-  languageName: node
-  linkType: hard
-
 "readable-stream@npm:^3.1.1, readable-stream@npm:^3.4.0, readable-stream@npm:^3.6.0":
   version: 3.6.2
   resolution: "readable-stream@npm:3.6.2"
@@ -8138,16 +8061,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"require_optional@npm:~1.0.0":
-  version: 1.0.1
-  resolution: "require_optional@npm:1.0.1"
-  dependencies:
-    resolve-from: ^2.0.0
-    semver: ^5.1.0
-  checksum: 64aed45ccff138e3e8abfa104de6f9bd324d27408228dbe0902049f586a2a80caf885e162b4724ee9dd5a2a0369987e8b5c5db86f5eb48a98a9f7c7d00b5c5a5
-  languageName: node
-  linkType: hard
-
 "requires-port@npm:^1.0.0":
   version: 1.0.0
   resolution: "requires-port@npm:1.0.0"
@@ -8168,13 +8081,6 @@ __metadata:
   dependencies:
     resolve-from: ^5.0.0
   checksum: 546e0816012d65778e580ad62b29e975a642989108d9a3c5beabfb2304192fa3c9f9146fbdfe213563c6ff51975ae41bac1d3c6e047dd9572c94863a057b4d81
-  languageName: node
-  linkType: hard
-
-"resolve-from@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "resolve-from@npm:2.0.0"
-  checksum: 02db4c30fecddef0efafbafb2d66b96c4a80f91d103d9850be3b85d1feb65b6af6c818d137dc546cea7d0288c21e13aa0fb4580af9af34b08052b3516690c5f3
   languageName: node
   linkType: hard
 
@@ -8308,13 +8214,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"safe-buffer@npm:~5.1.0":
-  version: 5.1.2
-  resolution: "safe-buffer@npm:5.1.2"
-  checksum: f2f1f7943ca44a594893a852894055cf619c1fbcb611237fc39e461ae751187e7baf4dc391a72125e0ac4fb2d8c5c0b3c71529622e6a58f46b960211e704903c
-  languageName: node
-  linkType: hard
-
 "safer-buffer@npm:>= 2.1.2 < 3.0.0":
   version: 2.1.2
   resolution: "safer-buffer@npm:2.1.2"
@@ -8377,15 +8276,6 @@ __metadata:
   bin:
     semver: bin/semver.js
   checksum: ba9c7cbbf2b7884696523450a61fee1a09930d888b7a8d7579025ad93d459b2d1949ee5bbfeb188b2be5f4ac163544c5e98491ad6152df34154feebc2cc337c1
-  languageName: node
-  linkType: hard
-
-"semver@npm:^5.1.0":
-  version: 5.7.1
-  resolution: "semver@npm:5.7.1"
-  bin:
-    semver: ./bin/semver
-  checksum: 57fd0acfd0bac382ee87cd52cd0aaa5af086a7dc8d60379dfe65fea491fb2489b6016400813930ecd61fd0952dae75c115287a1b16c234b1550887117744dfaf
   languageName: node
   linkType: hard
 
@@ -8609,15 +8499,6 @@ __metadata:
   dependencies:
     safe-buffer: ~5.2.0
   checksum: 8417646695a66e73aefc4420eb3b84cc9ffd89572861fe004e6aeb13c7bc00e2f616247505d2dbbef24247c372f70268f594af7126f43548565c68c117bdeb56
-  languageName: node
-  linkType: hard
-
-"string_decoder@npm:~1.0.0":
-  version: 1.0.3
-  resolution: "string_decoder@npm:1.0.3"
-  dependencies:
-    safe-buffer: ~5.1.0
-  checksum: 57ef02a148fd1ff2f20fe1accd944505ed3703e78bb28d302d940b2ad3dfb469508f79dcd0275ba1960d9675aa206452f76b2416059a6d0b0200bd7e9f552cdb
   languageName: node
   linkType: hard
 
@@ -9201,7 +9082,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"util-deprecate@npm:^1.0.1, util-deprecate@npm:~1.0.1":
+"util-deprecate@npm:^1.0.1":
   version: 1.0.2
   resolution: "util-deprecate@npm:1.0.2"
   checksum: 474acf1146cb2701fe3b074892217553dfcf9a031280919ba1b8d651a068c9b15d863b7303cb15bd00a862b498e6cf4ad7b4a08fb134edd5a6f7641681cb54a2
@@ -9521,15 +9402,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"zealot@npm:^0.2.0":
-  version: 0.2.0
-  resolution: "zealot@npm:0.2.0"
-  dependencies:
-    mongodb: ^2.2.27
-  checksum: 74e9f0a30d7ec86d588d08c15823bda054ca835bd77e07e283fbf7e12a60de0277a7751ae965e31db7bf413baca96e34bbb39d9fcb3651b8fb3790d0d5bb119d
-  languageName: node
-  linkType: hard
-
 "zealot@workspace:.":
   version: 0.0.0-use.local
   resolution: "zealot@workspace:."
@@ -9564,11 +9436,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"zed@brimdata/zed#5be50e590207bd953e02eff74f85c0a25fac955c":
+"zed@github:brimdata/zed#main":
   version: 0.33.0-dev
-  resolution: "zed@https://github.com/brimdata/zed.git#commit=5be50e590207bd953e02eff74f85c0a25fac955c"
-  dependencies:
-    zealot: ^0.2.0
-  checksum: 3a28b8804ac7b57b1db44ea4618f150853f9aa68eb31f3359a22f64284fc14318f2cd64f00ff01edea2d1c4cad182e3b0197016dda5f327f526c1fbb3be1503e
+  resolution: "zed@https://github.com/brimdata/zed.git#commit=474c8db704a9b5eab44b8dfa277ba61f5bd1f24e"
+  checksum: a28a8f25842ab916f8e010d52f0a97f24a65640fbdccb32c10e35ea13ab0e3297a6b226d3a1c5d4c9974a048e71264f1bce8368d8aaad64ba9f4d8e66ea4996c
   languageName: node
   linkType: hard

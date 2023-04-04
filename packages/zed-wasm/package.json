@@ -1,6 +1,6 @@
 {
   "name": "@brimdata/zed-wasm",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "homepage": "https://github.com/brimdata/zed",
   "type": "module",
   "keywords": [
@@ -16,6 +16,6 @@
     "golang-wasm": "github:teamortix/golang-wasm#master"
   },
   "dependencies": {
-    "@brimdata/zed-js": "*"
+    "@brimdata/zed-js": "0.0.6"
   }
 }

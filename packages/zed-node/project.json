@@ -5,13 +5,14 @@
   "projectType": "library",
   "targets": {
     "build": {
-      "executor": "@nrwl/js:swc",
+      "executor": "@nrwl/js:tsc",
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/packages/zed-node",
         "main": "packages/zed-node/src/index.ts",
         "tsConfig": "packages/zed-node/tsconfig.lib.json",
-        "assets": ["packages/zed-node/*.md"]
+        "assets": ["packages/zed-node/*.md"],
+        "updateBuildableProjectDepsInPackageJson": false
       }
     },
     "publish": {
