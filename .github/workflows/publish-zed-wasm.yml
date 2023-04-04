@@ -5,6 +5,7 @@ on:
 
 jobs:
   publish:
+    name: Publish @brimdata/zed-wasm to NPM
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
