@@ -1,0 +1,53 @@
+name: Publish NPM Packages
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - packages/*/package.json
+
+jobs:
+  publish:
+    name: Publish Packages to NPM
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        project: [zed-js, zed-node, zed-wasm]
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Install Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: '1.19'
+
+      - name: Install Node
+        uses: actions/setup-node@v3
+        with:
+          cache: yarn
+          node-version-file: .node-version
+
+      - name: Yarn
+        run: yarn
+
+      - name: Lint, Test, Build
+        run: yarn nx run-many --targets=lint,test,build --projects=${{ matrix.project }}
+
+      - name: Publish To NPM
+        id: npm
+        uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
+          package: './dist/packages/${{ matrix.project }}/package.json'
+
+      - name: Notify Slack
+        if: steps.npm.outputs.type != 'none'
+        uses: slackapi/slack-github-action@v1.23.0
+        with:
+          payload: '{"text": "Published @brimdata/${{matrix.project}} version ${{ steps.npm.outputs.version }}\nhttps://www.npmjs.com/package/@brimdata/${{matrix.project}}"}'
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
