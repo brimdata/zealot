@@ -1,4 +1,7 @@
-on: push
+on:
+  push:
+    paths:
+      - ./packages/zed-wasm/package.json
 
 jobs:
   publish:
