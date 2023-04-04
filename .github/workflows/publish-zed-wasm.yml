@@ -32,7 +32,17 @@ jobs:
         run: yarn nx run-many --targets=lint,test,build --projects=zed-wasm
 
       - name: Publish To NPM
+        id: npm
         uses: JS-DevTools/npm-publish@v1
         with:
           token: ${{ secrets.NPM_TOKEN }}
           package: './packages/zed-wasm/package.json'
+
+      - name: Notify Slack
+        if: steps.npm.outputs.type != 'none'
+        uses: slackapi/slack-github-action@v1.23.0
+        with:
+          payload: '{"text": "Published @brimdata/zed-wasm version ${{ steps.npm.outputs.version }}\nhttps://www.npmjs.com/package/@brimdata/zed-wasm"}'
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
