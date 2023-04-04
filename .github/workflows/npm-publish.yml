@@ -8,7 +8,7 @@ on:
 
 jobs:
   publish:
-    name: Publish Packages to NPM
+    name: npm publish
     runs-on: ubuntu-latest
     strategy:
       matrix:
