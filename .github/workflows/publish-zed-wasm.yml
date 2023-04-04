@@ -1,6 +1,8 @@
 name: NPM Publish @brimdata/zed-wasm
 on:
   pull_request:
+    paths:
+      - packages/zed-wasm/package.json
 
 jobs:
   publish:
