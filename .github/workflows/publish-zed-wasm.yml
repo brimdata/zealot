@@ -38,7 +38,7 @@ jobs:
         uses: JS-DevTools/npm-publish@v1
         with:
           token: ${{ secrets.NPM_TOKEN }}
-          package: './packages/zed-wasm/package.json'
+          package: './dist/packages/zed-wasm/package.json'
 
       - name: Notify Slack
         if: steps.npm.outputs.type != 'none'
