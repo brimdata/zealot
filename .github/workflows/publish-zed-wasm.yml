@@ -1,7 +1,7 @@
 on:
   push:
     paths:
-      - ./packages/zed-wasm/package.json
+      - './packages/zed-wasm/package.json'
 
 jobs:
   publish:
