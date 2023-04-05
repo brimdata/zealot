@@ -59,6 +59,6 @@ Only the zq function is exposed at the moment. It takes an options object and re
 function zq(options: {
   input?: string;
   program?: string;
-  inputType?: 'auto' | 'csv' | 'ndjson' | 'parquet';
+  inputFormat?: 'auto' | 'arrows' | 'csv' | 'json' | 'line' | 'parquet' | 'vng' | 'zeek' | 'zjson' | 'zng' | 'zson';
 }): Promise<zed.Any[]>;
 ```
