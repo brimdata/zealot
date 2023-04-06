@@ -55,6 +55,23 @@ import { zq } from 'https://cdn.jsdelivr.net/npm/@brimdata/zed-wasm@0.0.3/index.
 
 Only the zq function is exposed at the moment. It takes an options object and returns an array of Zed Value Objects.
 
-```ts
-function zq(options: { input?: string; program?: string; inputFormat?: 'auto' | 'arrows' | 'csv' | 'json' | 'line' | 'parquet' | 'vng' | 'zeek' | 'zjson' | 'zng' | 'zson' }): Promise<zed.Any[]>;
+```js
+function zq(options: {
+  input?: string;
+  program?: string;
+  inputFormat?: InputFormat;
+}): Promise<zed.Any[]>;
+
+type InputFormat =
+  | 'auto'
+  | 'arrows'
+  | 'csv'
+  | 'json'
+  | 'line'
+  | 'parquet'
+  | 'vng'
+  | 'zeek'
+  | 'zjson'
+  | 'zng'
+  | 'zson';
 ```
