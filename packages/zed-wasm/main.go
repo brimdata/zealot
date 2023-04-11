@@ -3,6 +3,7 @@ package main
 import (
 	"bytes"
 	"context"
+	"fmt"
 	"strings"
 
 	"github.com/brimdata/zed"
@@ -29,6 +30,7 @@ type opts struct {
 }
 
 func zq(opts opts) (string, error) {
+	fmt.Printf("%v", opts)
 	flowgraph, err := compiler.Parse(opts.Program)
 	if err != nil {
 		return "", err

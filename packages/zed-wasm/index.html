@@ -1,0 +1,17 @@
+<h1>Zed Wasm Test</h1>
+<input type="file" id="file-input" />
+<script type="module">
+  import { zq } from '../../dist/packages/zed-wasm/index.js';
+  const result = await zq({ input: '1 2 3' });
+  console.log(result);
+
+  const input = document.getElementById('file-input');
+
+  input.addEventListener('change', async () => {
+    const file = input.files[0];
+    if (!file) return;
+    console.log(file);
+    const result = await zq({ input: file, program: '*' });
+    console.log(result);
+  });
+</script>
