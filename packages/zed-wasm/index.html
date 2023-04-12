@@ -11,7 +11,7 @@
     const file = input.files[0];
     if (!file) return;
     console.log(file);
-    const result = await zq({ input: file, program: '*' });
+    const result = await zq({ input: file.stream(), program: '*' });
     console.log(result);
   });
 </script>
