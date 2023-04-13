@@ -42,4 +42,14 @@ describe('zq', () => {
     const resp = zed.map((z) => z.toJS());
     assert.deepEqual(resp, [2, 3, 4]);
   });
+
+  it('works on 32kb+ file', async () => {
+    const count = 16000;
+    let str = '';
+    for (let i = 0; i < count; i++) str += `1 `;
+    const input = new File([str], '32kb.txt');
+    const zed = await zq({ input, program: 'count()' });
+    const resp = zed.map((z) => z.toJS());
+    assert.deepEqual(resp, [count]);
+  });
 });
