@@ -50,7 +50,6 @@ func zq(opts opts) wasm.Promise {
 		case js.TypeString:
 			r = strings.NewReader(opts.Input.String())
 		case js.TypeObject:
-			// Only objects of type file are supported.
 			if !opts.Input.InstanceOf(js.Global().Get("ReadableStream")) {
 				return nil, errInvalidInput
 			}
@@ -101,9 +100,12 @@ func readableStream(readable js.Value) io.Reader {
 				pw.CloseWithError(err)
 				return
 			}
-			for n := len(buf); n < len(buf); {
-				n = js.CopyBytesToGo(buf, ch.Value)
+			for {
+				n := js.CopyBytesToGo(buf, ch.Value)
 				pw.Write(buf[:n])
+				if n < len(buf) {
+					break
+				}
 			}
 		}
 	}()

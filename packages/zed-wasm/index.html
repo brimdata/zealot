@@ -1,17 +1,29 @@
-<h1>Zed Wasm Test</h1>
-<input type="file" id="file-input" />
-<script type="module">
-  import { zq } from '../../dist/packages/zed-wasm/index.js';
-  const result = await zq({ input: '1 2 3' });
-  console.log(result);
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Mocha Tests</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://unpkg.com/mocha/mocha.css" />
+  </head>
+  <body>
+    <div id="mocha"></div>
 
-  const input = document.getElementById('file-input');
+    <script src="https://unpkg.com/chai/chai.js"></script>
+    <script src="https://unpkg.com/mocha/mocha.js"></script>
+    <script type="module"></script>
 
-  input.addEventListener('change', async () => {
-    const file = input.files[0];
-    if (!file) return;
-    console.log(file);
-    const result = await zq({ input: file.stream(), program: '*' });
-    console.log(result);
-  });
-</script>
+    <script class="mocha-init" type="module">
+      mocha.setup('bdd');
+      mocha.checkLeaks();
+    </script>
+
+    <script type="module" src="test/zq.test.js"></script>
+
+    <script class="mocha-exec" type="module">
+      const { zq } = await import('../../dist/packages/zed-wasm/index.js');
+      window.zq = zq;
+      mocha.run();
+    </script>
+  </body>
+</html>

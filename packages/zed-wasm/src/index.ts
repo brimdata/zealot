@@ -5,13 +5,44 @@ import { decode, ndjson } from '@brimdata/zed-js';
 const url = new URL('.', import.meta.url);
 const path = url.href + 'main.wasm';
 const wasm = await fetch(path);
-const proxy = bridge(wasm.arrayBuffer());
+const go = bridge(wasm.arrayBuffer());
 
 export async function zq(opts: {
   program?: string;
-  input?: string;
+  input?: string | File | Blob | ReadableStream;
   inputFormat?: string;
 }) {
-  const result = await proxy.zq({ ...opts, outputFormat: 'zjson' });
+  const result = await go.zq({
+    input: getInput(opts.input),
+    inputFormat: opts.inputFormat,
+    program: opts.program,
+    outputFormat: 'zjson',
+  });
+
   return decode(ndjson.parseLines(result));
+}
+
+function getInput(
+  input: string | File | Blob | ReadableStream | Response | undefined | any[]
+) {
+  if (typeof input === 'string') return input;
+  if (input instanceof File) return input.stream();
+  if (input instanceof Blob) return input.stream();
+  if (input instanceof ReadableStream) return input;
+  if (input instanceof Response) return input.body;
+  if (Array.isArray(input)) return arrayStream(input);
+  if (input === undefined) return undefined;
+  if (input === null) return undefined;
+  throw new Error(`Unsupported input type provided to zq ${input}`);
+}
+
+function arrayStream(input: any[]) {
+  return new ReadableStream({
+    start(ctl) {
+      for (const item of input) {
+        ctl.enqueue(JSON.stringify(item));
+      }
+      ctl.close();
+    },
+  });
 }
