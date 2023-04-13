@@ -38,8 +38,7 @@ describe('zq', () => {
 
   it('input is an array of JS objects', async () => {
     const input = [1, 2, 3];
-    const zed = await zq({ input, program: 'this + 1' });
-    const resp = zed.map((z) => z.toJS());
+    const resp = await zq({ input, program: 'this + 1', outputFormat: 'js' });
     assert.deepEqual(resp, [2, 3, 4]);
   });
 

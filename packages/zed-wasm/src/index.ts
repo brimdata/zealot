@@ -1,6 +1,6 @@
 import '../lib/wasm_exec';
 import bridge from 'golang-wasm/src/bridge';
-import { decode, ndjson } from '@brimdata/zed-js';
+import { LoadFormat, decode, ndjson } from '@brimdata/zed-js';
 
 const url = new URL('.', import.meta.url);
 const path = url.href + 'main.wasm';
@@ -9,8 +9,9 @@ const go = bridge(wasm.arrayBuffer());
 
 export async function zq(opts: {
   program?: string;
-  input?: string | File | Blob | ReadableStream;
-  inputFormat?: string;
+  input?: string | File | Blob | ReadableStream | any[];
+  inputFormat?: LoadFormat;
+  outputFormat?: 'js' | 'zed';
 }) {
   const result = await go.zq({
     input: getInput(opts.input),
@@ -19,7 +20,9 @@ export async function zq(opts: {
     outputFormat: 'zjson',
   });
 
-  return decode(ndjson.parseLines(result));
+  const zed = decode(ndjson.parseLines(result));
+  if (opts.outputFormat === 'js') return zed.map((val) => val.toJS());
+  return zed;
 }
 
 function getInput(
