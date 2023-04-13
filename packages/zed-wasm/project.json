@@ -54,6 +54,15 @@
           "codeCoverage": true
         }
       }
+    },
+    "test-browser": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "serve",
+          "open-cli http://localhost:3000/packages/zed-wasm/"
+        ]
+      }
     }
   },
   "tags": []

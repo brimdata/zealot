@@ -75,3 +75,13 @@ type InputFormat =
   | 'zng'
   | 'zson';
 ```
+
+### Running Browser Test
+
+Tests are written with Mocha. To run them:
+
+```
+yarn nx test-browser zed-wasm
+```
+
+When you make changes, run `yarn nx build zed-wasm`, then reload the page.
