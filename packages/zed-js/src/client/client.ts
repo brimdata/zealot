@@ -1,9 +1,8 @@
 import { BaseClient } from './base-client';
 
 export class Client extends BaseClient {
-  public fetch = fetch;
-
-  test() {
-    return 'test';
-  }
+  // eslint-disable-next-line
+  // @ts-ignore
+  // eslint-disable-next-line
+  public fetch = (...args: any[]) => window.fetch(...args);
 }

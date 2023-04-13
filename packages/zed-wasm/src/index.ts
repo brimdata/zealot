@@ -13,5 +13,6 @@ export async function zq(opts: {
   inputFormat?: string;
 }) {
   const result = await proxy.zq({ ...opts, outputFormat: 'zjson' });
-  return decode(ndjson.parseLines(result));
+  return result;
+  // return decode(ndjson.parseLines(result));
 }

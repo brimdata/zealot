@@ -9,7 +9,8 @@ import nodeFetch from 'node-fetch';
 export class Client extends BaseClient {
   // eslint-disable-next-line
   // @ts-ignore
-  public fetch = nodeFetch;
+  // eslint-disable-next-line
+  public fetch = (...args: any[]) => nodeFetch(...args);
 
   async load(
     data: string | NodeJS.ReadableStream,

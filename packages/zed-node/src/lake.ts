@@ -11,6 +11,7 @@ type ConstructorOpts = {
   logs: string;
   port?: number;
   bin?: string;
+  corsOrigins?: string[];
 };
 export class Lake {
   lake?: ChildProcess;
@@ -18,12 +19,14 @@ export class Lake {
   port: number;
   logs: string;
   bin: string;
+  cors: string[];
 
   constructor(opts: ConstructorOpts) {
     this.root = opts.root;
     this.logs = opts.logs;
     this.port = opts.port || 9867;
     this.bin = opts.bin || zedCommand;
+    this.cors = opts.corsOrigins || [];
   }
 
   addr(): string {
@@ -45,6 +48,9 @@ export class Lake {
       '-log.path',
       join(this.logs, 'zlake.log'),
     ];
+    for (const origin of this.cors) {
+      args.push(`--cors.origin=${origin}`);
+    }
 
     const opts = {
       stdio: ['inherit', 'inherit', 'inherit'],
