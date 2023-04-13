@@ -37,10 +37,11 @@ function getInput(
 }
 
 function arrayStream(input: any[]) {
+  const encoder = new TextEncoder();
   return new ReadableStream({
     start(ctl) {
       for (const item of input) {
-        ctl.enqueue(JSON.stringify(item));
+        ctl.enqueue(encoder.encode(JSON.stringify(item) + '\n'));
       }
       ctl.close();
     },
