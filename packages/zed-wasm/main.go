@@ -16,6 +16,7 @@ import (
 	"github.com/brimdata/zed/zio"
 	"github.com/brimdata/zed/zio/anyio"
 	"github.com/teamortix/golang-wasm/wasm"
+	"golang.org/x/exp/slices"
 )
 
 func main() {
@@ -92,21 +93,18 @@ func readableStream(readable js.Value) io.Reader {
 	pr, pw := io.Pipe()
 	go func() {
 		reader := readable.Call("getReader")
-		// Read up to 16KB at a time
-		buf := make([]byte, 16384)
+		var buf []byte
 		for {
 			var ch chunk
 			if err := await(reader.Call("read"), &ch); ch.Done || err != nil {
 				pw.CloseWithError(err)
 				return
 			}
-			for {
-				n := js.CopyBytesToGo(buf, ch.Value)
-				pw.Write(buf[:n])
-				if n < len(buf) {
-					break
-				}
-			}
+			n := ch.Value.Length()
+			buf = slices.Grow(buf, n)
+			b := buf[:n]
+			js.CopyBytesToGo(b, ch.Value)
+			pw.Write(b)
 		}
 	}()
 	return pr
