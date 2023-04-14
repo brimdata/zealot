@@ -21,8 +21,8 @@ export async function zq(opts: {
   });
 
   const zed = decode(ndjson.parseLines(result));
-  if (opts.outputFormat === 'js') return zed.map((val) => val.toJS());
-  return zed;
+  if (opts.outputFormat === 'zed') return zed;
+  return zed.map((val) => val.toJS());
 }
 
 function getInput(

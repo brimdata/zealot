@@ -48,7 +48,9 @@ This packages brings Zed into your browser.
 The easiest way to work with the published version of zed-wasm is to use a CDN like JsDelivr. Use the url below inside of a `script` tag with the type property set to "module".
 
 ```js
-import { zq } from 'https://cdn.jsdelivr.net/npm/@brimdata/zed-wasm@0.0.3/index.js';
+const { zq } = await import(
+  'https://cdn.jsdelivr.net/npm/@brimdata/zed-wasm/index.js'
+);
 ```
 
 ## API
@@ -59,8 +61,9 @@ Only the zq function is exposed at the moment. It takes an options object and re
 function zq(options: {
   input?: string;
   program?: string;
-  inputFormat?: InputFormat;
-}): Promise<zed.Any[]>;
+  inputFormat?: InputFormat; // Defaults to auto
+  outputFormat?: "js" | "zed" // Defaults to js
+}): Promise<any[]>;
 
 type InputFormat =
   | 'auto'
