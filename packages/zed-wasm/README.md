@@ -57,7 +57,7 @@ Only the zq function is exposed at the moment. It takes an options object and re
 
 ```js
 function zq(options: {
-  input?: string;
+  input?: string | File | Blob | ReadableStream | any[];
   program?: string;
   inputFormat?: InputFormat; // Defaults to auto
   outputFormat?: "js" | "zed" // Defaults to js
