@@ -18,6 +18,13 @@
         <input type="text" value="*" id="program" />
       </div>
       <div>
+        <h2>Output Format</h2>
+        <select id="output-format">
+          <option>zed</option>
+          <option>js</option>
+        </select>
+      </div>
+      <div>
         <button type="button" id="run">Run</button>
       </div>
       <div>
@@ -45,11 +52,17 @@
     <script type="module">
       const input = document.getElementById('file-input');
       const program = document.getElementById('program');
+      const outputFormat = document.getElementById('output-format');
       const run = document.getElementById('run');
 
       run.addEventListener('click', async () => {
         const file = input.files[0];
-        const result = await zq({ input: file, program: program.value });
+        if (!file) return;
+        const result = await zq({
+          input: file,
+          program: program.value,
+          outputFormat: outputFormat.value,
+        });
         console.log(result);
       });
     </script>
