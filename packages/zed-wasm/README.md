@@ -28,7 +28,7 @@ This packages brings Zed into your browser.
 
 ```html
 <script type="module">
-  import { zq } from 'https://cdn.jsdelivr.net/npm/@brimdata/zed-wasm@0.0.3/index.js';
+  import { zq } from 'https://cdn.jsdelivr.net/npm/@brimdata/zed-wasm/index.js';
 
   const result = await zq({
     input: '1 2 3',
