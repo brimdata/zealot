@@ -1,6 +1,7 @@
 # zed-wasm
 
-The [Zed](https://zed.brimdata.io/) command line tools built for [Web Assembly](https://webassembly.org/).
+The [Zed](https://zed.brimdata.io/) command line tools built for
+[WebAssembly](https://webassembly.org/).
 
 [View the interactive demo](https://observablehq.com/d/4064e8ce0f7b7e51)
 
