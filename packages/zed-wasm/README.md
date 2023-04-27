@@ -69,8 +69,6 @@ type InputFormat =
   | 'csv'
   | 'json'
   | 'line'
-  | 'parquet'
-  | 'vng'
   | 'zeek'
   | 'zjson'
   | 'zng'
