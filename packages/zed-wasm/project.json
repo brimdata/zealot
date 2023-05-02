@@ -41,18 +41,13 @@
         "lintFilePatterns": ["packages/zed-wasm/**/*.ts"]
       }
     },
-    "test": {
-      "executor": "@nrwl/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+    "test-browser": {
+      "executor": "nx:run-commands",
       "options": {
-        "jestConfig": "packages/zed-wasm/jest.config.ts",
-        "passWithNoTests": true
-      },
-      "configurations": {
-        "ci": {
-          "ci": true,
-          "codeCoverage": true
-        }
+        "commands": [
+          "serve",
+          "open-cli http://localhost:3000/packages/zed-wasm/"
+        ]
       }
     }
   },
