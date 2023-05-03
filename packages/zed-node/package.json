@@ -1,13 +1,13 @@
 {
   "name": "@brimdata/zed-node",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "type": "commonjs",
   "devDependencies": {
     "@types/fs-extra": "^11.0.1",
     "@types/node-fetch": "^2.6.2"
   },
   "dependencies": {
-    "@brimdata/zed-js": "0.0.14",
+    "@brimdata/zed-js": "0.0.15",
     "fs-extra": "^11.1.1",
     "node-fetch": "^2.6.2"
   },
