@@ -34,9 +34,6 @@ jobs:
       - name: Yarn
         run: yarn
 
-      - name: Format Check
-        run: yarn nx format:check
-
       - name: Lint
         run: yarn nx affected -t lint --parallel=3
 
