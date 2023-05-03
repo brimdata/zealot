@@ -53,9 +53,11 @@ export abstract class BaseClient {
   async createPool(name: string, opts: Partial<Types.CreatePoolOpts> = {}) {
     const options = defaults<Types.CreatePoolOpts>(opts, {
       order: 'desc',
-      key: 'ts',
+      key: ['ts'],
     });
-    const keys = Array.isArray(options.key) ? options.key : [options.key];
+
+    const keys =
+      typeof options.key === 'string' ? [[options.key]] : [options.key];
     const layout = { order: options.order, keys };
     return this.send({
       method: 'POST',
