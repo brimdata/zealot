@@ -1389,7 +1389,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@brimdata/zed-js@0.0.14, @brimdata/zed-js@workspace:packages/zed-js":
+"@brimdata/zed-js@0.0.15, @brimdata/zed-js@workspace:packages/zed-js":
   version: 0.0.0-use.local
   resolution: "@brimdata/zed-js@workspace:packages/zed-js"
   dependencies:
@@ -1403,7 +1403,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@brimdata/zed-node@workspace:packages/zed-node"
   dependencies:
-    "@brimdata/zed-js": 0.0.14
+    "@brimdata/zed-js": 0.0.15
     "@types/fs-extra": ^11.0.1
     "@types/node-fetch": ^2.6.2
     fs-extra: ^11.1.1
@@ -1417,7 +1417,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@brimdata/zed-wasm@workspace:packages/zed-wasm"
   dependencies:
-    "@brimdata/zed-js": 0.0.14
+    "@brimdata/zed-js": 0.0.15
     "@types/golang-wasm": ^1.15.0
     golang-wasm: "github:teamortix/golang-wasm#master"
   languageName: unknown
