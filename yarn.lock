@@ -1389,7 +1389,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@brimdata/zed-js@0.0.14, @brimdata/zed-js@workspace:packages/zed-js":
+"@brimdata/zed-js@0.0.15, @brimdata/zed-js@workspace:packages/zed-js":
   version: 0.0.0-use.local
   resolution: "@brimdata/zed-js@workspace:packages/zed-js"
   dependencies:
@@ -1403,12 +1403,14 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@brimdata/zed-node@workspace:packages/zed-node"
   dependencies:
-    "@brimdata/zed-js": 0.0.14
+    "@brimdata/zed-js": 0.0.15
     "@types/fs-extra": ^11.0.1
     "@types/node-fetch": ^2.6.2
     fs-extra: ^11.1.1
     node-fetch: ^2.6.2
     zed: "github:brimdata/zed#main"
+  peerDependencies:
+    zed: "*"
   languageName: unknown
   linkType: soft
 
@@ -1416,7 +1418,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@brimdata/zed-wasm@workspace:packages/zed-wasm"
   dependencies:
-    "@brimdata/zed-js": 0.0.14
+    "@brimdata/zed-js": 0.0.15
     "@types/golang-wasm": ^1.15.0
     golang-wasm: "github:teamortix/golang-wasm#master"
   languageName: unknown
@@ -10480,7 +10482,7 @@ __metadata:
 
 "zed@github:brimdata/zed#main":
   version: 0.33.0-dev
-  resolution: "zed@https://github.com/brimdata/zed.git#commit=474c8db704a9b5eab44b8dfa277ba61f5bd1f24e"
-  checksum: a28a8f25842ab916f8e010d52f0a97f24a65640fbdccb32c10e35ea13ab0e3297a6b226d3a1c5d4c9974a048e71264f1bce8368d8aaad64ba9f4d8e66ea4996c
+  resolution: "zed@https://github.com/brimdata/zed.git#commit=f733ef3722f78d988cb94071e5ba8d2539a39da9"
+  checksum: a6659e318e80becff2616b5fd45378e08440d3c938adb0d05fe5e7da6b46c87464249b77978bed4ce9eca533d2183f55bfe36fbef6cf883762b6827e83dcab69
   languageName: node
   linkType: hard

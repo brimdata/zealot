@@ -41,5 +41,5 @@ for (const [name, project] of Object.entries(graph.nodes)) {
       pkg.peerDependencies[dep.importKey] = version;
     }
   }
-  fs.writeFileSync(packageJSON, JSON.stringify(pkg, null, 2));
+  fs.writeFileSync(packageJSON, JSON.stringify(pkg, null, 2) + '\n');
 }
