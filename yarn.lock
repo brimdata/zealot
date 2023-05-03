@@ -1408,6 +1408,7 @@ __metadata:
     "@types/node-fetch": ^2.6.2
     fs-extra: ^11.1.1
     node-fetch: ^2.6.2
+    zed: "github:brimdata/zed#main"
   peerDependencies:
     zed: "*"
   languageName: unknown
@@ -10478,3 +10479,10 @@ __metadata:
     typescript: ~4.9.5
   languageName: unknown
   linkType: soft
+
+"zed@github:brimdata/zed#main":
+  version: 0.33.0-dev
+  resolution: "zed@https://github.com/brimdata/zed.git#commit=f733ef3722f78d988cb94071e5ba8d2539a39da9"
+  checksum: a6659e318e80becff2616b5fd45378e08440d3c938adb0d05fe5e7da6b46c87464249b77978bed4ce9eca533d2183f55bfe36fbef6cf883762b6827e83dcab69
+  languageName: node
+  linkType: hard
