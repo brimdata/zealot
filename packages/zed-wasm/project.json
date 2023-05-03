@@ -23,7 +23,7 @@
       "executor": "nx:run-commands",
       "outputs": ["dist/packages/zed-wasm/main.wasm"],
       "options": {
-        "command": "GOARCH=wasm GOOS=js go build -tags=noasm -o ../../dist/packages/zed-wasm/main.wasm main.go",
+        "command": "go build -tags=noasm -o ../../dist/packages/zed-wasm/main.wasm main.go",
         "cwd": "packages/zed-wasm"
       }
     },
