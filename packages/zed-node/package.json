@@ -9,7 +9,9 @@
   "dependencies": {
     "@brimdata/zed-js": "0.0.14",
     "fs-extra": "^11.1.1",
-    "node-fetch": "^2.6.2",
-    "zed": "github:brimdata/zed#main"
+    "node-fetch": "^2.6.2"
+  },
+  "peerDependencies": {
+    "zed": "*"
   }
 }
