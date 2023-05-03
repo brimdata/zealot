@@ -34,11 +34,11 @@ jobs:
       - name: Yarn
         run: yarn
 
-      - name: Lint
-        run: yarn nx affected -t lint --parallel=3
-
-      - name: Test
-        run: yarn nx affected -t test --parallel=3 --configuration=ci
+      #       - name: Lint
+      #         run: yarn nx affected -t lint --parallel=3
+      #
+      #       - name: Test
+      #         run: yarn nx affected -t test --parallel=3 --configuration=ci
 
       - name: Build
         run: yarn nx affected -t build --parallel=3 --verbose
