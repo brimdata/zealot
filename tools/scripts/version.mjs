@@ -3,6 +3,7 @@ import chalk from 'chalk';
 import path from 'path';
 import fs from 'fs';
 import * as url from 'url';
+import { execSync } from 'child_process';
 
 const args = process.argv.slice(2);
 const version = args[0];
@@ -43,3 +44,5 @@ for (const [name, project] of Object.entries(graph.nodes)) {
   }
   fs.writeFileSync(packageJSON, JSON.stringify(pkg, null, 2) + '\n');
 }
+
+execSync('yarn');
