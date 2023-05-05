@@ -3,6 +3,7 @@ import {
   BaseClient,
   LoadOpts,
   getLoadContentType,
+  jsonHeader,
 } from '@brimdata/zed-js';
 import nodeFetch from 'node-fetch';
 
@@ -21,7 +22,7 @@ export class Client extends BaseClient {
     const poolId = typeof pool === 'string' ? pool : pool.id;
     const branch = opts.branch || 'main';
     const headers: Record<string, string> = {};
-    if (opts.message) headers['Zed-Commit'] = JSON.stringify(opts.message);
+    if (opts.message) headers['Zed-Commit'] = jsonHeader(opts.message);
     const res = await this.send({
       path: `/pool/${poolId}/branch/${encodeURIComponent(branch)}`,
       method: 'POST',
