@@ -4,8 +4,6 @@ import { join } from 'path';
 import fetch from 'node-fetch';
 import { getZedPath } from './binpath';
 
-const zedCommand = getZedPath();
-
 type ConstructorOpts = {
   root: string;
   logs: string;
@@ -25,7 +23,7 @@ export class Lake {
     this.root = opts.root;
     this.logs = opts.logs;
     this.port = opts.port || 9867;
-    this.bin = opts.bin || zedCommand;
+    this.bin = opts.bin || getZedPath();
     this.cors = opts.corsOrigins || [];
   }
 
