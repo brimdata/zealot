@@ -3,7 +3,7 @@ import { PoolConfig, PoolStats } from '../types';
 import { ResultStream } from '../query/result-stream';
 import { createError } from '../util/error';
 import * as Types from './types';
-import { accept, defaults, json, parseContent, toJS, wrapAbort } from './utils';
+import { accept, defaults, parseContent, toJS, wrapAbort } from './utils';
 
 export abstract class BaseClient {
   public abstract fetch: Types.IsoFetch;
@@ -41,7 +41,7 @@ export abstract class BaseClient {
     const result = await this.send({
       method: 'POST',
       path: `/query?ctrl=${options.controlMessages}`,
-      body: json({ query }),
+      body: JSON.stringify({ query }),
       contentType: 'application/json',
       format: options.format,
       signal: abortCtl.signal,
@@ -62,7 +62,7 @@ export abstract class BaseClient {
     return this.send({
       method: 'POST',
       path: '/pool',
-      body: json({ name, layout }),
+      body: JSON.stringify({ name, layout }),
       contentType: 'application/json',
     }).then(toJS);
   }
@@ -102,7 +102,7 @@ export abstract class BaseClient {
     await this.send({
       method: 'PUT',
       path: `/pool/${poolId}`,
-      body: json(args),
+      body: JSON.stringify(args),
       contentType: 'application/json',
     });
     return true;
@@ -137,7 +137,6 @@ export abstract class BaseClient {
   }) {
     const abortCtl = wrapAbort(opts.signal);
     const clearTimer = this.setTimeout(() => {
-      console.error('request timed out:', opts);
       abortCtl.abort();
     }, opts.timeout);
     const headers = { ...opts.headers };
