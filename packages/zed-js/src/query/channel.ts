@@ -1,7 +1,7 @@
 import { EventEmitter } from 'events';
 import { DefaultContext } from '../context';
 import { DecodeStream } from '../decode-stream';
-import { Collector, TypeDefs } from '../types';
+import { CollectOpts, Collector, TypeDefs } from '../types';
 import { Type } from '../types/types';
 import { Value } from '../values/types';
 import * as zjson from '../zjson';
@@ -42,7 +42,7 @@ export class Channel extends EventEmitter {
     this.addRow(value);
   }
 
-  collect(collector: Collector) {
+  collect(collector: Collector, opts: CollectOpts = {}) {
     /**
      * The goal here is to get the first batch of results out
      * to the collector as soon as possible. Then, only give
@@ -51,8 +51,8 @@ export class Channel extends EventEmitter {
      */
     let first = true;
     let count = 0;
-    const countThresh = 2000;
-    const timeThresh = 2000;
+    const countThresh = opts.every?.count ?? 2000;
+    const timeThresh = opts.every?.ms ?? 2000;
     let timeId: ReturnType<typeof setTimeout>;
 
     const flush = () => {

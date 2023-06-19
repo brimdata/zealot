@@ -66,3 +66,5 @@ export interface BranchMeta {
 export type TypeDefs = { [name: string]: Type };
 
 export type Collector = (vals: { rows: Value[]; shapesMap: TypeDefs }) => void;
+
+export type CollectOpts = { every?: { ms: number; count: number } };
