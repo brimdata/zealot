@@ -8,7 +8,8 @@
     "tslib": "^2.3.0"
   },
   "scripts": {
-    "set-version": "node tools/scripts/version.mjs"
+    "set-version": "node tools/scripts/version.mjs",
+    "build-affected": "nx affected --target=build"
   },
   "devDependencies": {
     "@nrwl/esbuild": "^15.8.7",

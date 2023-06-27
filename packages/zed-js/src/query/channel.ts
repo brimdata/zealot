@@ -51,8 +51,8 @@ export class Channel extends EventEmitter {
      */
     let first = true;
     let count = 0;
-    const countThresh = opts.every?.count ?? 2000;
-    const timeThresh = opts.every?.ms ?? 2000;
+    const countThresh = opts?.count ?? 2000;
+    const timeThresh = opts?.ms ?? 2000;
     let timeId: ReturnType<typeof setTimeout>;
 
     const flush = () => {
