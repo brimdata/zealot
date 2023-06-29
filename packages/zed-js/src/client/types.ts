@@ -28,7 +28,8 @@ export type CreatePoolOpts = {
 export type Pool = {
   id: string;
   name: string;
-  threshold: bigint;
+  threshold: number;
+  seek_stride: number;
   ts: Date;
   layout: {
     order: 'desc' | 'asc';

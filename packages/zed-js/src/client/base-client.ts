@@ -64,7 +64,7 @@ export abstract class BaseClient {
       path: '/pool',
       body: JSON.stringify({ name, layout }),
       contentType: 'application/json',
-    }).then(toJS);
+    }).then(toJS) as Promise<Types.Pool>;
   }
 
   async deletePool(poolId: string) {
